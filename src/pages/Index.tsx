@@ -3,6 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import RetargetingSection from "@/components/landing/RetargetingSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import PainPointsSection from "@/components/landing/PainPointsSection";
+import CoursePreviewSection from "@/components/landing/CoursePreviewSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import FreeLessonsSection from "@/components/landing/FreeLessonsSection";
 import CertificateSection from "@/components/landing/CertificateSection";
