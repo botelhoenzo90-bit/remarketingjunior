@@ -9,10 +9,11 @@ import FreeLessonsSection from "@/components/landing/FreeLessonsSection";
 import CertificateSection from "@/components/landing/CertificateSection";
 import CourseContentSection from "@/components/landing/CourseContentSection";
 import BoardRepairSection from "@/components/landing/BoardRepairSection";
-import BonusSection from "@/components/landing/BonusSection";
 import MentorSection from "@/components/landing/MentorSection";
-import PricingSection from "@/components/landing/PricingSection";
+import BonusSection from "@/components/landing/BonusSection";
 import RecapSection from "@/components/landing/RecapSection";
+import RemarketingCloseSection from "@/components/landing/RemarketingCloseSection";
+import PricingSection from "@/components/landing/PricingSection";
 import TwoChoicesSection from "@/components/landing/TwoChoicesSection";
 import FAQSection from "@/components/landing/FAQSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
@@ -38,6 +39,7 @@ const Index = () => {
       <MentorSection />
       <BonusSection />
       <RecapSection />
+      <RemarketingCloseSection />
       <PricingSection />
       <TwoChoicesSection />
       <FAQSection />
