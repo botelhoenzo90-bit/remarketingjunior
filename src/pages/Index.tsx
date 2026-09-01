@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/landing/HeroSection";
 import RetargetingSection from "@/components/landing/RetargetingSection";
+import DecisionJourneySection from "@/components/landing/DecisionJourneySection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import PainPointsSection from "@/components/landing/PainPointsSection";
 import CoursePreviewSection from "@/components/landing/CoursePreviewSection";
@@ -28,6 +29,7 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <HeroSection />
       <RetargetingSection />
+      <DecisionJourneySection />
       <BenefitsSection />
       <PainPointsSection />
       <CoursePreviewSection />
