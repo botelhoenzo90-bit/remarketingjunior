@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Clock3, ArrowDown, PlayCircle, Scale, Target, BookOpen, Sparkles } from "lucide-react";
+import { Check, Clock3, ArrowDown, PlayCircle, Scale, Target, BookOpen, Sparkles, XCircle } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 
