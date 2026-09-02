@@ -5,55 +5,17 @@ import certificateImg from "@/assets/certificate.png";
 import CtaButton from "./CtaButton";
 
 const CertificateSection = () => (
-  <SectionWrapper className="py-20 relative">
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute right-0 top-1/3 w-[600px] h-[400px] rounded-full opacity-25 blur-[100px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} />
-    </div>
+  <SectionWrapper className="relative py-20 sm:py-28">
+    <div className="pointer-events-none absolute inset-0"><div className="absolute right-0 top-1/3 h-[400px] w-[600px] rounded-full opacity-20 blur-[100px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} /></div>
     <div className="relative mx-auto max-w-5xl px-4">
-      <div className="mb-4 flex justify-center">
-        <span className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground uppercase tracking-wider">
-          <Award className="h-4 w-4" />
-          Certificado Profissional
-        </span>
-      </div>
+      <div className="mb-5 flex justify-center"><span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary"><Award className="h-4 w-4" /> Ao concluir o treinamento</span></div>
+      <h2 className="text-center font-display text-3xl font-black leading-tight sm:text-5xl">Registre sua conclusão com <span className="text-gradient">um certificado.</span></h2>
+      <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg">Depois de concluir o conteúdo, você recebe o certificado de conclusão do treinamento.</p>
 
-      <h2 className="mb-4 text-center font-display text-3xl font-bold sm:text-4xl">
-        Certificado <span className="text-gradient">Válido em Todo o Brasil</span>
-      </h2>
-      <p className="mb-12 text-center text-muted-foreground max-w-2xl mx-auto">
-        Ao concluir o curso, você recebe um certificado de conclusão profissional reconhecido em todo o território nacional.
-      </p>
-
-      <div className="flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="overflow-hidden rounded-xl border-2 border-primary/30 shadow-xl shadow-primary/10 max-w-lg"
-        >
-          <img src={certificateImg} alt="Certificado Mestre da Manutenção" className="w-full" />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mt-8"
-        >
-          {[
-            "Comprova suas habilidades técnicas",
-            "Diferencial competitivo no mercado",
-            "Emitido pela JR TEC",
-          ].map((item) => (
-            <span key={item} className="inline-flex items-center gap-2 rounded-full bg-accent/15 border border-accent/30 px-5 py-2.5 text-sm font-semibold text-accent">
-              <CheckCircle className="h-4 w-4" />
-              {item}
-            </span>
-          ))}
-        </motion.div>
-        <div className="mt-10 flex justify-center">
-          <CtaButton className="whitespace-nowrap">QUERO MEU CERTIFICADO!</CtaButton>
-        </div>
+      <div className="mt-10 flex flex-col items-center">
+        <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="overflow-hidden rounded-2xl border-2 border-primary/30 bg-card shadow-2xl shadow-primary/10 max-w-lg"><img src={certificateImg} alt="Exemplo de certificado do Mestre da Manutenção" className="w-full" /></motion.div>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">{["Certificado de conclusão", "Documento para registrar sua formação", "Emitido pela JR TEC"].map((item) => <span key={item} className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2.5 text-sm font-semibold text-accent"><CheckCircle className="h-4 w-4" /> {item}</span>)}</div>
+        <CtaButton href="#pricing" className="mt-9">QUERO VER A OFERTA →</CtaButton>
       </div>
     </div>
   </SectionWrapper>
