@@ -1,130 +1,47 @@
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MessageCircle, Phone, Clock, CheckCircle2, Smartphone } from "lucide-react";
+import { MessageCircle, CheckCircle2, Smartphone } from "lucide-react";
 import { Instagram } from "lucide-react";
 
 const faqs = [
-  { q: "Nunca fiz microssoldagem. Vou conseguir aprender?", a: "Sim. O treinamento foi desenvolvido para quem está começando e também para técnicos que já trabalham com manutenção, mas querem dominar os reparos avançados. Você aprenderá desde os fundamentos até técnicas profissionais de microssoldagem." },
-  { q: "Vou aprender análise e diagnóstico de placas?", a: "Sim. Você aprenderá um método completo para analisar a placa, interpretar medições, localizar defeitos e identificar a causa real dos problemas antes de trocar qualquer componente." },
-  { q: "O curso ensina temperaturas, fluxo de ar e configurações da estação?", a: "Sim. Você aprenderá quais temperaturas utilizar, como ajustar o fluxo de ar, como trabalhar com o ferro de solda e quando utilizar cada configuração para evitar danos à placa." },
-  { q: "Vou aprender quais ferramentas e insumos realmente preciso comprar?", a: "Sim. Você receberá orientações sobre microscópio, estação de ar, ferro de solda, fonte de alimentação, multímetro, soldas, fluxos e os principais insumos utilizados por profissionais da área." },
-  { q: "O curso ensina reparos em placas de Android e iPhone?", a: "Sim. O conteúdo aborda diagnósticos, microssoldagem e reparos em placas de diversos aparelhos Android e iPhone, utilizando situações reais de bancada." },
-  { q: "Preciso ter experiência em manutenção?", a: "Não. O curso foi estruturado para levar você do zero ao avançado, mesmo que nunca tenha trabalhado com eletrônica ou manutenção de celulares." },
-  { q: "Quanto tempo terei acesso ao curso?", a: "Você terá acesso vitalício para assistir às aulas no seu ritmo, revisar o conteúdo sempre que precisar e acompanhar todas as futuras atualizações." },
-  { q: "Existe suporte caso eu tenha dúvidas?", a: "Sim. Você terá acesso ao suporte direto com Júnior Bezerra para esclarecer dúvidas e continuar evoluindo durante sua jornada no curso." },
-  { q: "Depois de aprender reparo em placas, consigo aumentar meu faturamento?", a: "Sim. Os reparos em placa costumam ter maior valor agregado do que serviços básicos. Ao dominar análise, diagnóstico e microssoldagem, você amplia seus serviços e pode cobrar mais." },
-  { q: "Esse curso serve para quem já trabalha com manutenção?", a: "Sim. Se você já troca telas e baterias, este treinamento foi criado justamente para dar o próximo passo: dominar os reparos avançados que diferenciam um especialista." },
-];
-
-const contactFeatures = [
-  { icon: Phone, title: "Atendimento Humano", desc: "Nada de robô, você fala diretamente comigo" },
-  { icon: Clock, title: "Resposta Rápida", desc: "Respondo o mais rápido possível" },
-  { icon: CheckCircle2, title: "Tire Todas as Dúvidas", desc: "Sem compromisso, só conversar" },
+  { q: "Preciso já trabalhar com manutenção?", a: "Não. O treinamento foi pensado para acompanhar quem está começando e também quem já trabalha com manutenção e quer avançar para diagnóstico, eletrônica e reparos em placa." },
+  { q: "Nunca fiz microssoldagem. Isso é para mim?", a: "O conteúdo apresenta técnicas e procedimentos de microssoldagem dentro da proposta do treinamento. Você pode estudar as aulas, pausar, revisar e avançar no seu ritmo." },
+  { q: "Vou aprender a diagnosticar defeitos em placa?", a: "Sim. O conteúdo inclui diagnóstico, eletrônica, uso de multímetro e fonte de alimentação, além de diferentes situações de reparo em placa." },
+  { q: "O treinamento aborda Android e iPhone?", a: "Sim. Há conteúdos voltados para reparos em placas Android e iPhone, além de outros procedimentos de manutenção apresentados na página." },
+  { q: "Quais tipos de reparo aparecem no curso?", a: "Entre os conteúdos apresentados estão telas, baterias, conectores, câmeras, desoxidação, áudio, diagnóstico, microssoldagem, jumper, reballing e reparos em placa." },
+  { q: "Preciso comprar todas as ferramentas antes de começar?", a: "Não é necessário começar dominando tudo. O ideal é estudar o conteúdo e entender quais ferramentas e insumos fazem sentido para o seu momento e para os serviços que você pretende executar." },
+  { q: "Como funciona o acesso?", a: "O curso é online e o acesso é liberado após a confirmação da compra. Assim, você pode acompanhar as aulas de acordo com a sua rotina." },
+  { q: "Existe suporte para dúvidas?", a: "Sim. A oferta inclui comunidade VIP e suporte direto para dúvidas relacionadas à jornada de aprendizado." },
+  { q: "E se eu perceber que o curso não é para mim?", a: "A oferta inclui 7 dias de garantia. Se decidir não continuar, você pode solicitar o reembolso dentro do prazo e conforme as condições da garantia." },
+  { q: "Ainda estou em dúvida. O que devo fazer?", a: "Volte às aulas gratuitas e aos vídeos de apresentação. Veja o conteúdo com calma e só depois decida se o treinamento faz sentido para você." },
 ];
 
 const FAQSection = () => (
   <>
-    <SectionWrapper id="faq" className="py-20">
+    <SectionWrapper id="faq" className="py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4">
-        <h2 className="mb-4 text-center font-display text-3xl font-bold sm:text-4xl">
-          Dúvidas <span className="text-gradient">Frequentes</span>
-        </h2>
-        <p className="mb-12 text-center text-muted-foreground">
-          Tire suas dúvidas antes de tomar a melhor decisão da sua vida
-        </p>
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((f, i) => (
-            <AccordionItem
-              key={i}
-              value={`faq-${i}`}
-              className="rounded-xl border border-border bg-card px-5 data-[state=open]:glow-primary"
-            >
-              <AccordionTrigger className="text-left font-display text-sm font-semibold text-foreground hover:text-primary hover:no-underline py-4">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground pb-4">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+        <div className="text-center"><span className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary">Antes de finalizar</span><h2 className="mt-5 font-display text-3xl font-black sm:text-5xl">Ainda ficou alguma <span className="text-gradient">dúvida?</span></h2><p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">Confira as respostas mais importantes e tome sua decisão com todas as informações na mesa.</p></div>
+        <Accordion type="single" collapsible className="mt-10 space-y-3">
+          {faqs.map((faq, i) => <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 data-[state=open]:border-primary/40 data-[state=open]:shadow-[0_10px_35px_hsl(192_95%_55%/0.08)]"><AccordionTrigger className="py-5 text-left font-display text-sm font-bold text-foreground hover:text-primary hover:no-underline sm:text-base">{faq.q}</AccordionTrigger><AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">{faq.a}</AccordionContent></AccordionItem>)}
         </Accordion>
-
-        <div className="mt-8 flex justify-center">
-          <CtaButton className="whitespace-nowrap">QUERO GARANTIR MINHA VAGA!</CtaButton>
-        </div>
+        <div className="mt-9 text-center"><CtaButton href="#pricing">JÁ DECIDI. QUERO VER A OFERTA →</CtaButton></div>
       </div>
     </SectionWrapper>
 
-    {/* WhatsApp Contact Section */}
-    <section className="py-20 bg-deep-blue relative">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} />
-      </div>
+    <section className="relative bg-deep-blue py-20 sm:py-24">
+      <div className="pointer-events-none absolute inset-0"><div className="absolute left-1/2 top-1/2 h-[450px] w-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} /></div>
       <div className="relative mx-auto max-w-5xl px-4 text-center">
-        {/* Logo */}
-        <div className="mb-4 flex items-center justify-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/40 bg-primary/10">
-            <Smartphone className="h-5 w-5 text-primary" />
-          </div>
-          <div className="text-left">
-            <p className="font-display text-sm font-bold uppercase tracking-wider text-foreground leading-tight">MESTRE DA</p>
-            <p className="font-display text-sm font-bold uppercase tracking-wider text-accent leading-tight">MANUTENÇÃO</p>
-          </div>
-        </div>
-
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent">
-          <MessageCircle className="h-4 w-4" />
-          ATENDIMENTO DIRETO
-        </span>
-
-        <h2 className="mb-4 font-display text-3xl font-bold sm:text-4xl">
-          Fale <span className="text-accent">comigo</span> pelo WhatsApp
-        </h2>
-        <p className="mb-8 text-muted-foreground max-w-xl mx-auto">
-          Tem alguma dúvida específica? Quer conversar antes de tomar sua decisão?<br />
-          Clique no botão abaixo e fale diretamente com <span className="font-bold text-foreground">Júnior Bezerra</span>.
-        </p>
-
-        <a
-          href="https://wa.me/558894231328?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20curso%20Mestre%20da%20Manuten%C3%A7%C3%A3o%21"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground transition-colors hover:brightness-110"
-        >
-          <MessageCircle className="h-5 w-5" />
-          Falar no WhatsApp
-        </a>
-
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          {contactFeatures.map((f) => (
-            <div key={f.title} className="rounded-xl border border-border bg-card p-6 text-center">
-              <f.icon className="mx-auto mb-3 h-7 w-7 text-accent" />
-              <h3 className="mb-1 font-display text-sm font-bold text-foreground">{f.title}</h3>
-              <p className="text-xs text-muted-foreground">{f.desc}</p>
-            </div>
-          ))}
-        </div>
+        <div className="mb-5 flex items-center justify-center gap-2"><div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/40 bg-primary/10"><Smartphone className="h-5 w-5 text-primary" /></div><div className="text-left"><p className="font-display text-sm font-black uppercase leading-tight">MESTRE DA</p><p className="font-display text-sm font-black uppercase leading-tight text-accent">MANUTENÇÃO</p></div></div>
+        <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-sm font-black text-accent"><MessageCircle className="h-4 w-4" /> PRECISA FALAR ANTES DE COMPRAR?</span>
+        <h2 className="mt-5 font-display text-3xl font-black sm:text-5xl">Converse antes de <span className="text-accent">decidir.</span></h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">Se existe uma dúvida específica que a página não respondeu, você pode falar diretamente pelo WhatsApp antes de finalizar.</p>
+        <a href="https://wa.me/558894231328?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20curso%20Mestre%20da%20Manuten%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-black text-accent-foreground transition hover:brightness-110"><MessageCircle className="h-5 w-5" /> Falar no WhatsApp</a>
+        <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3"><div className="rounded-2xl border border-border bg-card p-5"><CheckCircle2 className="mx-auto mb-2 h-6 w-6 text-accent" /><p className="text-sm font-bold">Tire sua dúvida</p></div><div className="rounded-2xl border border-border bg-card p-5"><CheckCircle2 className="mx-auto mb-2 h-6 w-6 text-accent" /><p className="text-sm font-bold">Conheça melhor o curso</p></div><div className="rounded-2xl border border-border bg-card p-5"><CheckCircle2 className="mx-auto mb-2 h-6 w-6 text-accent" /><p className="text-sm font-bold">Decida com segurança</p></div></div>
       </div>
     </section>
 
-    {/* Footer */}
-    <footer className="border-t border-border bg-card py-8">
-      <div className="mx-auto max-w-5xl px-4 text-center">
-        <a
-          href="https://www.instagram.com/juniorbezerraa/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary transition-colors"
-        >
-          <Instagram className="h-5 w-5" />
-          @juniorbezerraa
-        </a>
-        <p className="mt-4 text-xs text-muted-foreground">
-          © 2026 Mestre da Manutenção. Todos os direitos reservados.
-        </p>
-      </div>
-    </footer>
+    <footer className="border-t border-border bg-card py-8"><div className="mx-auto max-w-5xl px-4 text-center"><a href="https://www.instagram.com/juniorbezerraa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary"><Instagram className="h-5 w-5" /> @juniorbezerraa</a><p className="mt-4 text-xs text-muted-foreground">© 2026 Mestre da Manutenção. Todos os direitos reservados.</p></div></footer>
   </>
 );
 
