@@ -26,13 +26,13 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <HeroSection />
       <RetargetingSection />
       <DecisionJourneySection />
+      <CoursePreviewSection />
       <BenefitsSection />
       <PainPointsSection />
-      <CoursePreviewSection />
       <TestimonialsSection />
       <FreeLessonsSection />
       <CertificateSection />
