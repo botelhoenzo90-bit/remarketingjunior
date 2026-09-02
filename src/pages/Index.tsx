@@ -16,7 +16,6 @@ import RemarketingCloseSection from "@/components/landing/RemarketingCloseSectio
 import PricingSection from "@/components/landing/PricingSection";
 import FAQSection from "@/components/landing/FAQSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
-import SalesNotification from "@/components/landing/SalesNotification";
 
 const Index = () => {
   useEffect(() => {
@@ -42,7 +41,6 @@ const Index = () => {
       <PricingSection />
       <FAQSection />
       <WhatsAppButton />
-      <SalesNotification />
     </div>
   );
 };
