@@ -21,24 +21,24 @@ import imgEletronica from "@/assets/board/eletronica.jpg";
 import imgConducao from "@/assets/board/conducao-reversa.jpg";
 
 const modules = [
-  { title: "Como Trocar Telas", image: imgTelas },
-  { title: "Como Trocar Baterias", image: imgBateria },
-  { title: "Como Trocar Conector de Carga", image: imgConector },
-  { title: "Como Trocar Tampa Traseira", image: imgTampa },
-  { title: "Como Trocar Câmeras", image: imgCameras },
-  { title: "Como Trocar Botão Power", image: imgPower },
-  { title: "Como Trocar Botões de Volume", image: imgVolume },
-  { title: "Como Trocar Antena de Rede", image: imgAntenas },
-  { title: "Como Fazer Desoxidação", image: imgDesoxidacao },
-  { title: "Como Trocar o Vibra Call", image: imgVibracao },
-  { title: "Como Trocar Microfone", image: imgMicrofone },
-  { title: "Como Trocar Alto Falante", image: imgAltofalante },
-  { title: "Como Trocar Biometria", image: imgBiometrico },
-  { title: "Diagnóstico e Análise de Defeitos", image: imgDiagnostico },
-  { title: "Como Usar a Fonte de Alimentação", image: imgFonte },
-  { title: "Como Usar o Multímetro", image: imgMultimetro },
+  { title: "Troca de telas", image: imgTelas },
+  { title: "Troca de baterias", image: imgBateria },
+  { title: "Conector de carga", image: imgConector },
+  { title: "Tampa traseira", image: imgTampa },
+  { title: "Câmeras", image: imgCameras },
+  { title: "Botão Power", image: imgPower },
+  { title: "Botões de volume", image: imgVolume },
+  { title: "Antena de rede", image: imgAntenas },
+  { title: "Desoxidação", image: imgDesoxidacao },
+  { title: "Vibra Call", image: imgVibracao },
+  { title: "Microfone", image: imgMicrofone },
+  { title: "Alto-falante", image: imgAltofalante },
+  { title: "Biometria", image: imgBiometrico },
+  { title: "Diagnóstico de defeitos", image: imgDiagnostico },
+  { title: "Fonte de alimentação", image: imgFonte },
+  { title: "Multímetro", image: imgMultimetro },
   { title: "Eletrônica", image: imgEletronica },
-  { title: "Condução Reversa", image: imgConducao },
+  { title: "Condução reversa", image: imgConducao },
 ];
 
 const CARD_W = 220;
@@ -47,73 +47,30 @@ const TOTAL = modules.length * (CARD_W + GAP);
 const DURATION = modules.length * 3;
 
 const ModuleCard = ({ title, image }: { title: string; image: string }) => (
-  <div className="flex-shrink-0 w-[200px] sm:w-[220px] group select-none">
-    <div className="rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_25px_hsl(192_95%_55%/0.15)]">
-      <div className="w-full aspect-[3/4] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          loading="lazy"
-          draggable={false}
-        />
-      </div>
-      <div className="px-3 py-4 text-center bg-card">
-        <p className="text-sm font-bold text-foreground leading-tight min-h-[2.5rem] flex items-center justify-center">
-          {title}
-        </p>
-      </div>
+  <div className="group w-[200px] flex-shrink-0 select-none sm:w-[220px]">
+    <div className="overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_25px_hsl(192_95%_55%/0.15)]">
+      <div className="aspect-[3/4] w-full overflow-hidden"><img src={image} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" draggable={false} /></div>
+      <div className="bg-card px-3 py-4 text-center"><p className="flex min-h-[2.5rem] items-center justify-center text-sm font-bold leading-tight text-foreground">{title}</p></div>
     </div>
   </div>
 );
 
 const CourseContentSection = () => {
   const doubled = [...modules, ...modules];
-
   return (
-    <SectionWrapper id="conteudo" className="py-20 relative bg-deep-blue">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-30 blur-[120px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} />
-      </div>
-
+    <SectionWrapper id="conteudo" className="relative bg-deep-blue py-20 sm:py-28">
+      <div className="pointer-events-none absolute inset-0"><div className="absolute inset-0 bg-grid opacity-30" /><div className="absolute left-1/2 top-1/2 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} /></div>
       <div className="relative mx-auto max-w-6xl px-4">
-        <div className="mb-12 flex flex-col items-center text-center">
-          <span className="mb-4 inline-block rounded-full bg-primary/20 border border-primary/30 px-5 py-1.5 text-sm font-bold text-primary">
-            📱 NÍVEL 1 — DO BÁSICO AO INTERMEDIÁRIO
-          </span>
-          <h2 className="mb-3 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Veja tudo que <span className="text-gradient">você vai dominar:</span>
-          </h2>
-          <p className="max-w-2xl text-muted-foreground">
-            Desde a troca de componentes básicos até o diagnóstico avançado de circuitos
-          </p>
+        <div className="mb-12 text-center">
+          <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary">Do básico ao intermediário</span>
+          <h2 className="mt-4 font-display text-3xl font-black sm:text-5xl">Uma base completa para <span className="text-gradient">a sua evolução.</span></h2>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Veja alguns dos temas que fazem parte do treinamento e entenda a variedade de situações que você pode estudar.</p>
         </div>
       </div>
-
-      {/* Marquee carousel */}
-      <div className="w-full overflow-hidden">
-        <div
-          className="board-marquee flex gap-5"
-          style={{
-            width: `${TOTAL * 2}px`,
-            animationDuration: `${DURATION}s`,
-          }}
-        >
-          {doubled.map((m, i) => (
-            <ModuleCard key={`${m.title}-${i}`} title={m.title} image={m.image} />
-          ))}
-        </div>
-      </div>
-
+      <div className="w-full overflow-hidden"><div className="board-marquee flex gap-5" style={{ width: `${TOTAL * 2}px`, animationDuration: `${DURATION}s` }}>{doubled.map((m, i) => <ModuleCard key={`${m.title}-${i}`} title={m.title} image={m.image} />)}</div></div>
       <div className="relative mx-auto max-w-6xl px-4">
-        <div className="mt-8 flex justify-center">
-          <span className="inline-block rounded-full bg-primary/20 border border-primary/30 px-6 py-2.5 text-sm font-bold text-primary">
-            🚀 E muito mais conteúdo exclusivo!
-          </span>
-        </div>
-        <div className="mt-8 flex justify-center">
-          <CtaButton className="whitespace-nowrap">QUERO APRENDER TUDO ISSO!</CtaButton>
-        </div>
+        <div className="mx-auto mt-9 max-w-2xl text-center"><p className="text-sm font-semibold text-muted-foreground">E isso é só uma parte do conteúdo.</p><p className="mt-1 font-display text-xl font-black text-foreground sm:text-2xl">Agora veja o nível dos reparos em placa.</p></div>
+        <div className="mt-7 flex justify-center"><CtaButton href="#placas">VER REPAROS EM PLACA →</CtaButton></div>
       </div>
     </SectionWrapper>
   );
