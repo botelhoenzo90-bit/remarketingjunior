@@ -16,16 +16,16 @@ const RetargetingSection = () => (
     <div className="relative mx-auto max-w-6xl px-4">
       <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-4xl text-center">
         <span className="mb-4 inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-primary">A dúvida faz parte da decisão</span>
-        <h2 className="font-display text-3xl font-black leading-tight sm:text-5xl lg:text-6xl">Se você ainda não comprou,<span className="block text-primary">provavelmente existe uma pergunta sem resposta.</span></h2>
-        <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Então vamos responder o que realmente importa. Sem pressão e sem promessa exagerada: veja o que o curso oferece e descubra se ele combina com o seu momento.</p>
+        <h2 className="font-display text-3xl font-black leading-tight sm:text-5xl lg:text-6xl">Quanto mais você adia,<span className="block text-primary">mais longe fica o conhecimento que poderia estar construindo hoje.</span></h2>
+        <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Se ainda existe alguma insegurança, vamos colocar as principais dúvidas na mesa e mostrar o que você encontra dentro do treinamento.</p>
       </motion.div>
 
       <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
         {doubts.map((item, i) => (
-          <motion.div key={item.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="rounded-3xl border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_hsl(192_95%_55%/0.08)] sm:p-8">
-            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><CheckCircle2 className="h-5 w-5" /></div>
+          <motion.div key={item.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="rounded-3xl border border-border bg-background p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_50px_hsl(192_95%_55%/0.08)] sm:p-8">
+            <div className="mx-auto mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><CheckCircle2 className="h-5 w-5" /></div>
             <h3 className="font-display text-xl font-black text-foreground sm:text-2xl">{item.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{item.text}</p>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">{item.text}</p>
           </motion.div>
         ))}
       </div>
