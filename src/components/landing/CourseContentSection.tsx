@@ -63,7 +63,7 @@ const CourseContentSection = () => {
       <div className="relative mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
           <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary">Do básico ao intermediário</span>
-          <h2 className="mt-4 font-display text-3xl font-black leading-tight sm:text-5xl">Quanto mais você adia, <span className="text-gradient">mais longe fica o conhecimento que poderia estar construindo hoje.</span></h2>
+          <h2 className="mt-4 font-display text-3xl font-black leading-tight sm:text-5xl">Se você ainda não comprou, <span className="text-gradient">provavelmente existe uma pergunta sem resposta.</span></h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Veja alguns dos temas que fazem parte do treinamento e entenda a variedade de situações que você pode estudar.</p>
         </div>
       </div>
