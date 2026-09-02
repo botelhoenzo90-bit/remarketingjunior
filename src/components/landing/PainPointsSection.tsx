@@ -20,8 +20,8 @@ const PainPointsSection = () => (
 
       <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-3">
         {pains.map((pain, i) => (
-          <motion.article key={pain.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="rounded-3xl border border-border bg-card p-7 sm:p-8">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><pain.icon className="h-6 w-6" /></div>
+          <motion.article key={pain.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="rounded-3xl border border-border bg-card p-7 text-center sm:p-8">
+            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><pain.icon className="h-6 w-6" /></div>
             <h3 className="font-display text-xl font-black sm:text-2xl">{pain.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{pain.desc}</p>
           </motion.article>

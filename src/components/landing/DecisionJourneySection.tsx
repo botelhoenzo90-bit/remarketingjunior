@@ -22,9 +22,9 @@ const DecisionJourneySection = () => (
 
       <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
         {reasons.map(({ icon: Icon, number, title, text }, i) => (
-          <motion.div key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .06 }} className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_20px_55px_hsl(192_95%_55%/0.10)] sm:p-8">
+          <motion.div key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .06 }} className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_20px_55px_hsl(192_95%_55%/0.10)] sm:p-8">
             <span className="absolute right-5 top-4 font-display text-4xl font-black text-primary/10">{number}</span>
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary"><Icon className="h-6 w-6" /></div>
+            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary"><Icon className="h-6 w-6" /></div>
             <h3 className="font-display text-xl font-black sm:text-2xl">{title}</h3>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">{text}</p>
           </motion.div>
