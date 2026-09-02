@@ -2,10 +2,6 @@ import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 
-import imgMultimetro from "@/assets/board/multimetro.jpg";
-import imgFonte from "@/assets/board/fonte.jpg";
-import imgConducao from "@/assets/board/conducao-reversa.jpg";
-import imgEletronica from "@/assets/board/eletronica.jpg";
 import imgEsquema from "@/assets/board/esquema.jpg";
 import imgMicroSoldagem from "@/assets/board/micro-soldagem.jpg";
 import imgJumper from "@/assets/board/trilhas.jpg";
@@ -29,120 +25,61 @@ import imgInterpuser from "@/assets/board/interpuser.jpg";
 import imgFaceid from "@/assets/board/faceid.jpg";
 
 const modules = [
-  { title: "Esquema Elétrico", image: imgEsquema },
-  { title: "Micro Soldagem", image: imgMicroSoldagem },
-  { title: "Jumper", image: imgJumper },
+  { title: "Esquema elétrico", image: imgEsquema },
+  { title: "Microssoldagem", image: imgMicroSoldagem },
+  { title: "Jumper e recuperação de trilhas", image: imgJumper },
   { title: "Reballing", image: imgReballing },
   { title: "CPU", image: imgCpu },
   { title: "Memória", image: imgMemoria },
   { title: "Swap", image: imgSwap },
-  { title: "Reparos em Placa Android", image: imgAndroid },
-  { title: "Não Liga", image: imgNaoLiga },
-  { title: "Falha de Inicialização", image: imgInicializacao },
-  { title: "Setor de Carga", image: imgCarga },
-  { title: "Setor de Imagem, Touch e Backlight", image: imgImagem },
-  { title: "Setor de Wi-Fi e Bluetooth", image: imgWifi },
-  { title: "Setor de Câmeras", image: imgCameras },
-  { title: "Setor de Áudio", image: imgAudio },
-  { title: "Setor de Rádio Frequência", image: imgRadio },
-  { title: "Reparos em Placa iPhone", image: imgIphone },
-  { title: "Micro Soldagem iPhone", image: imgMicroSoldagem },
-  { title: "Não Liga iPhone", image: imgNaoLiga },
-  { title: "Falha de Inicialização iPhone", image: imgInicializacao },
-  { title: "Setor de Carga iPhone", image: imgCarga },
-  { title: "Setor de Imagem, Touch e Backlight iPhone", image: imgImagem },
-  { title: "Setor de Wi-Fi e Bluetooth iPhone", image: imgWifi },
-  { title: "Setor de Câmeras iPhone", image: imgCameras },
-  { title: "Setor de Áudio iPhone", image: imgAudio },
-  { title: "Setor de Rádio Frequência iPhone", image: imgRadio },
-  { title: "Troca de Telas e Bateria Sem Mensagem", image: imgTelasBateria },
-  { title: "Separação e União das Placas", image: imgSeparacao },
-  { title: "Reballing em Interposer", image: imgInterpuser },
-  { title: "Memória iPhone", image: imgMemoria },
+  { title: "Reparos em placa Android", image: imgAndroid },
+  { title: "Aparelho que não liga", image: imgNaoLiga },
+  { title: "Falha de inicialização", image: imgInicializacao },
+  { title: "Setor de carga", image: imgCarga },
+  { title: "Imagem, touch e backlight", image: imgImagem },
+  { title: "Wi-Fi e Bluetooth", image: imgWifi },
+  { title: "Setor de câmeras", image: imgCameras },
+  { title: "Setor de áudio", image: imgAudio },
+  { title: "Rádio frequência", image: imgRadio },
+  { title: "Reparos em placa iPhone", image: imgIphone },
+  { title: "Troca de tela e bateria", image: imgTelasBateria },
+  { title: "Separação e união de placas", image: imgSeparacao },
+  { title: "Reballing em interposer", image: imgInterpuser },
   { title: "Face ID", image: imgFaceid },
 ];
 
-const CARD_WIDTH = 220; // px including gap
+const CARD_WIDTH = 220;
 const GAP = 20;
 const TOTAL_WIDTH = modules.length * (CARD_WIDTH + GAP);
-const DURATION = modules.length * 3; // seconds for full loop
+const DURATION = modules.length * 3;
 
 const ModuleCard = ({ title, image }: { title: string; image: string }) => (
-  <div className="flex-shrink-0 w-[200px] sm:w-[220px] group select-none">
-    <div className="rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_25px_hsl(192_95%_55%/0.15)]">
-      <div className="w-full aspect-[3/4] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          loading="lazy"
-          draggable={false}
-        />
-      </div>
-      <div className="px-3 py-4 text-center bg-card">
-        <p className="text-sm font-bold text-foreground leading-tight min-h-[2.5rem] flex items-center justify-center">
-          {title}
-        </p>
-      </div>
+  <div className="group w-[200px] flex-shrink-0 select-none sm:w-[220px]">
+    <div className="overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_25px_hsl(192_95%_55%/0.15)]">
+      <div className="aspect-[3/4] w-full overflow-hidden"><img src={image} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" draggable={false} /></div>
+      <div className="bg-card px-3 py-4 text-center"><p className="flex min-h-[2.5rem] items-center justify-center text-sm font-bold leading-tight text-foreground">{title}</p></div>
     </div>
   </div>
 );
 
 const BoardRepairSection = () => {
-  // Duplicate list for seamless infinite loop
   const doubled = [...modules, ...modules];
-
   return (
-    <SectionWrapper id="placas" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[600px] rounded-full opacity-20 blur-[140px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} />
+    <SectionWrapper id="placas" className="relative overflow-hidden py-20 sm:py-28">
+      <div className="pointer-events-none absolute inset-0"><div className="absolute inset-0 bg-grid opacity-30" /><div className="absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-20 blur-[140px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} /></div>
+      <div className="relative mx-auto max-w-6xl px-4">
+        <div className="mb-12 text-center">
+          <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary">Parte avançada do treinamento</motion.span>
+          <h2 className="mt-4 font-display text-3xl font-black sm:text-5xl">É aqui que o treinamento <span className="text-gradient">fica mais técnico.</span></h2>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Diagnóstico, eletrônica e reparos em placa: veja alguns dos assuntos abordados no conteúdo avançado para Android e iPhone.</p>
+        </div>
       </div>
+
+      <div className="w-full overflow-hidden"><div className="board-marquee flex gap-5" style={{ width: `${TOTAL_WIDTH * 2}px`, animationDuration: `${DURATION}s` }}>{doubled.map((m, i) => <ModuleCard key={`${m.title}-${i}`} title={m.title} image={m.image} />)}</div></div>
 
       <div className="relative mx-auto max-w-6xl px-4">
-        {/* Header */}
-        <div className="mb-12 flex flex-col items-center text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4 inline-block rounded-full bg-primary/20 border border-primary/30 px-5 py-1.5 text-sm font-bold text-primary"
-          >
-            🔬 NÍVEL 2 — AVANÇADO
-          </motion.span>
-          <h2 className="mb-3 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Aprenda <span className="text-gradient">Reparos em Placas</span>
-          </h2>
-          <p className="max-w-2xl text-muted-foreground">
-            iPhone, Android e Tablets — Domine as técnicas de micro soldagem e reparo de circuitos integrados. O diferencial que separa técnicos comuns de profissionais que faturam alto.
-          </p>
-        </div>
-      </div>
-
-      {/* Full-width marquee carousel */}
-      <div className="w-full overflow-hidden">
-        <div
-          className="board-marquee flex gap-5"
-          style={{
-            width: `${TOTAL_WIDTH * 2}px`,
-            animationDuration: `${DURATION}s`,
-          }}
-        >
-          {doubled.map((m, i) => (
-            <ModuleCard key={`${m.title}-${i}`} title={m.title} image={m.image} />
-          ))}
-        </div>
-      </div>
-
-      <div className="relative mx-auto max-w-6xl px-4">
-        <div className="mt-8 flex justify-center">
-          <span className="inline-block rounded-full bg-primary/10 border border-primary/20 px-5 py-2 text-sm font-bold text-primary">
-            🔥 {modules.length} módulos de reparo em placas
-          </span>
-        </div>
-        <div className="mt-6 flex justify-center">
-          <CtaButton className="whitespace-nowrap">QUERO DOMINAR REPAROS EM PLACAS!</CtaButton>
-        </div>
+        <div className="mx-auto mt-9 max-w-3xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center"><p className="font-display text-xl font-black sm:text-2xl">Não é só trocar peça. É entender o que está acontecendo na placa.</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">Essa é a diferença entre acompanhar um reparo e começar a construir raciocínio técnico.</p></div>
+        <div className="mt-7 flex justify-center"><CtaButton href="#bonus">VER O QUE MAIS ESTÁ INCLUSO →</CtaButton></div>
       </div>
     </SectionWrapper>
   );
