@@ -14,7 +14,6 @@ import CertificateSection from "@/components/landing/CertificateSection";
 import RecapSection from "@/components/landing/RecapSection";
 import RemarketingCloseSection from "@/components/landing/RemarketingCloseSection";
 import PricingSection from "@/components/landing/PricingSection";
-import TwoChoicesSection from "@/components/landing/TwoChoicesSection";
 import FAQSection from "@/components/landing/FAQSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
 import SalesNotification from "@/components/landing/SalesNotification";
@@ -41,7 +40,6 @@ const Index = () => {
       <RecapSection />
       <RemarketingCloseSection />
       <PricingSection />
-      <TwoChoicesSection />
       <FAQSection />
       <WhatsAppButton />
       <SalesNotification />
