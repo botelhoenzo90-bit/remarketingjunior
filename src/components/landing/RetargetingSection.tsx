@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Clock3, ArrowDown, PlayCircle, Scale, Target, BookOpen, Sparkles, XCircle } from "lucide-react";
+import { Check, Clock3, ArrowDown, PlayCircle, XCircle } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 
@@ -35,19 +35,9 @@ const RetargetingSection = () => (
         ))}
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">
-        {[{ icon: Scale, title: "COMPARE", text: "Veja o que realmente importa." }, { icon: BookOpen, title: "ENTENDA", text: "Conheça o treinamento por dentro." }, { icon: Target, title: "DECIDA", text: "Escolha com mais segurança." }].map((item, i) => (
-          <motion.div key={item.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="rounded-2xl border border-primary/15 bg-primary/5 p-6 text-center transition-all hover:border-primary/30 hover:bg-primary/10">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><item.icon className="h-6 w-6" /></div>
-            <p className="text-xs font-black tracking-widest text-primary">{item.title}</p>
-            <p className="mt-1 text-sm font-semibold text-foreground">{item.text}</p>
-          </motion.div>
-        ))}
-      </div>
-
       <motion.div id="aulas-gratis" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto mt-14 max-w-4xl rounded-3xl border-2 border-primary/30 bg-background p-7 text-center shadow-[0_0_60px_hsl(192_95%_55%/0.08)] sm:p-10">
         <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary"><PlayCircle className="h-7 w-7" /></div>
-        <div className="mb-2 flex items-center justify-center gap-2 text-accent"><Sparkles className="h-4 w-4" /><span className="text-xs font-black uppercase tracking-[0.2em]">Aulas completas liberadas gratuitamente</span></div>
+        <div className="mb-2 flex items-center justify-center gap-2 text-accent"><span className="text-xs font-black uppercase tracking-[0.2em]">Aulas completas liberadas gratuitamente</span></div>
         <h3 className="font-display text-2xl font-black sm:text-4xl">Veja como é aprender na prática.</h3>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">Assista às aulas completas liberadas gratuitamente, acompanhe a explicação e a prática e veja por dentro como o treinamento funciona.</p>
         <CtaButton href="#aulas-gratis" className="mt-7">QUERO ASSISTIR ÀS AULAS GRATUITAS →</CtaButton>
@@ -55,7 +45,7 @@ const RetargetingSection = () => (
           <p className="font-display text-lg font-black text-foreground">E se depois de começar você não gostar?</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Você conta com <strong className="text-foreground">7 dias de garantia</strong>, conforme as condições da oferta. Se perceber dentro desse prazo que o treinamento não faz sentido para você, poderá solicitar o cancelamento dentro do período da garantia.</p>
         </div>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-muted-foreground"><span>✓ Compra segura</span><span>✓ 7 dias de garantia</span></div>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-muted-foreground"><span>✓ 7 dias de garantia</span></div>
         <CtaButton href="#pricing" showIcon={false} className="mt-6">QUERO APROVEITAR A OFERTA</CtaButton>
       </motion.div>
       <div className="mt-10 flex justify-center text-primary"><ArrowDown className="h-6 w-6 animate-bounce" /></div>
