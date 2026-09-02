@@ -25,7 +25,7 @@ const HeroSection = () => (
       </motion.div>
 
       <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="mx-auto mb-5 max-w-5xl font-display text-4xl font-black leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-        Pare de trocar tempo por dinheiro. <span className="text-gradient">Aprenda a consertar celulares e cobre o que você realmente vale.</span>
+        Quanto mais você adia, <span className="text-gradient">mais longe fica o conhecimento que poderia estar construindo hoje.</span>
       </motion.h1>
 
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }} className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
