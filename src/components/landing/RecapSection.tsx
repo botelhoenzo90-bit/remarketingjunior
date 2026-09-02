@@ -1,64 +1,40 @@
 import { motion } from "framer-motion";
+import { Check, Smartphone, Wrench, CircuitBoard, Gift, Award } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import { Check } from "lucide-react";
 import CtaButton from "./CtaButton";
 
-const items = [
-  "Troca de Telas, Baterias, Câmeras e Conectores",
-  "Tampa Traseira, Botões e Antenas",
-  "Desoxidação e Software",
-  "Microfones, Alto-falantes e Sensores Biométricos",
-  "Placas, Circuitos e Diagnóstico Avançado",
-  "Ferramentas Essenciais e Calibração",
-  "Lista de Fornecedores Confiáveis",
-  "Multímetro, Fonte e Eletrônica",
-  "Micro Soldagem, Reballing e Jumper",
-  "CPU, Memória NAND e Swap",
-  "Reparos em Placa Android Completo",
-  "Reparos em Placa iPhone Completo",
-  "Face ID, Interpuser e Separação de Placas",
-  "5 Bônus Exclusivos (valor +R$ 1.685)",
-  "Certificado Profissional de Conclusão",
-  "Comunidade VIP + Suporte Direto",
-  "Atualizações Vitalícias Gratuitas",
+const groups = [
+  { icon: Smartphone, title: "Manutenção", items: "Telas • Baterias • Câmeras • Conectores • Tampas • Botões • Antenas" },
+  { icon: Wrench, title: "Diagnóstico e eletrônica", items: "Desoxidação • Software • Multímetro • Fonte • Sensores • Calibração" },
+  { icon: CircuitBoard, title: "Reparo avançado", items: "Microssoldagem • Reballing • Jumper • CPU • Memória NAND • Swap" },
+  { icon: Smartphone, title: "Android + iPhone", items: "Reparos em placa • Face ID • Interposer • Separação de placas" },
+  { icon: Gift, title: "Extras", items: "5 bônus exclusivos • Comunidade VIP • Suporte • Atualizações" },
+  { icon: Award, title: "Conclusão", items: "Certificado profissional de conclusão" },
 ];
 
 const RecapSection = () => (
-  <SectionWrapper className="py-20 bg-deep-blue relative overflow-hidden">
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, hsl(142 76% 46%), transparent 70%)" }} />
-    </div>
-    <div className="relative mx-auto max-w-3xl px-4">
-      <h2 className="mb-3 text-center font-display text-3xl font-bold sm:text-4xl">
-        Recapitulando: <span className="text-gradient-accent">tudo isso está incluso</span>
-      </h2>
-      <p className="mb-10 text-center text-muted-foreground">
-        Veja o pacote completo que você vai receber ao se inscrever hoje:
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {items.map((item, i) => (
-          <motion.div
-            key={item}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.04 }}
-            className="flex items-start gap-3 rounded-lg border border-border bg-card/50 px-4 py-3"
-          >
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-            <span className="text-sm text-foreground">{item}</span>
+  <SectionWrapper className="relative overflow-hidden bg-deep-blue py-20 sm:py-28">
+    <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+    <div className="relative mx-auto max-w-6xl px-4">
+      <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-4xl text-center">
+        <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-accent"><Check className="h-4 w-4" /> Tudo reunido em um só lugar</span>
+        <h2 className="mt-5 font-display text-3xl font-black leading-tight sm:text-5xl">Olha tudo o que você leva<span className="block text-gradient-accent">na condição atual.</span></h2>
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Em vez de uma lista interminável, aqui está o pacote completo dividido por aquilo que realmente importa para sua evolução.</p>
+      </motion.div>
+      <div className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2">
+        {groups.map(({ icon: Icon, title, items }, i) => (
+          <motion.div key={title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .05 }} className="rounded-2xl border border-border bg-card/80 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35">
+            <div className="mb-4 flex items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5" /></div><h3 className="font-display text-xl font-black">{title}</h3></div>
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{items}</p>
           </motion.div>
         ))}
       </div>
-
-      <div className="mt-10 text-center">
-        <p className="mb-6 text-lg font-bold text-foreground">
-          Tudo isso por apenas <span className="text-accent text-2xl">R$ 147</span>{" "}
-          <span className="text-sm text-destructive line-through">R$ 697</span>
-        </p>
-        <CtaButton className="whitespace-nowrap">QUERO TUDO ISSO AGORA!</CtaButton>
-      </div>
+      <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto mt-10 max-w-3xl rounded-3xl border border-accent/25 bg-background/80 p-7 text-center sm:p-9">
+        <p className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground">Condição atual</p>
+        <div className="mt-2 flex flex-wrap items-baseline justify-center gap-3"><span className="font-display text-4xl font-black text-accent">R$ 147</span><span className="text-lg font-bold text-destructive line-through">R$ 697</span></div>
+        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">Treinamento completo + 5 bônus exclusivos + 7 dias de garantia, conforme as condições da oferta.</p>
+        <CtaButton href="#pricing" className="mt-6">QUERO APROVEITAR A CONDIÇÃO →</CtaButton>
+      </motion.div>
     </div>
   </SectionWrapper>
 );
