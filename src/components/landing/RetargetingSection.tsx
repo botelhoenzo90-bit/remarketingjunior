@@ -16,7 +16,7 @@ const RetargetingSection = () => (
     <div className="relative mx-auto max-w-6xl px-4">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-4xl text-center">
         <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-primary"><Clock3 className="h-4 w-4" /> ⚡ NÃO DEIXE ESSA OPORTUNIDADE PASSAR</span>
-        <h2 className="font-display text-3xl font-black leading-tight sm:text-5xl lg:text-6xl">O próximo nível da sua manutenção começa quando você <span className="text-primary">decide agir.</span></h2>
+        <h2 className="font-display text-3xl font-black leading-tight sm:text-5xl lg:text-6xl">⚡ NÃO DEIXE ESSA OPORTUNIDADE PASSAR</h2>
         <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Em vez de continuar na dúvida, entenda como funciona, tire suas objeções e veja se esse treinamento faz sentido para você.</p>
       </motion.div>
 
