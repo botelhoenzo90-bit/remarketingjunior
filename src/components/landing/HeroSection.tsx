@@ -16,10 +16,9 @@ const HeroSection = () => (
     <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
     <div className="relative z-10 mx-auto max-w-5xl px-4 pt-6 pb-8 text-center">
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mb-4 flex items-center justify-center gap-2"><div className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/40 bg-primary/10"><Smartphone className="h-5 w-5 text-primary" /></div><div className="text-left"><p className="font-display text-sm font-bold uppercase tracking-wider text-foreground leading-tight">MESTRE DA</p><p className="font-display text-sm font-bold uppercase tracking-wider text-accent leading-tight">MANUTENÇÃO</p></div></motion.div>
-      <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent">🔥 VOCÊ JÁ CONHECE O CURSO. AGORA FALTA TOMAR A DECISÃO.</motion.div>
+      <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent">⚡ NÃO DEIXE ESSA OPORTUNIDADE PASSAR</motion.div>
       <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} className="mb-5 text-xl font-extrabold leading-[1.12] tracking-tight sm:text-3xl md:text-5xl" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-        Você já viu o <span className="text-primary">Mestre da Manutenção.</span> Já sabe o que pode aprender.
-        <span className="block mt-2 text-primary">Então o que ainda está fazendo você adiar?</span>
+        O próximo nível da sua manutenção começa quando você decide agir.
       </motion.h1>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }} className="mx-auto mb-8 max-w-3xl text-base text-muted-foreground sm:text-lg" style={{ fontFamily: "'Montserrat', sans-serif'" }}>
         Talvez você esteja comparando cursos, esperando o momento certo, pensando no investimento ou simplesmente com receio de começar. <span className="font-bold text-foreground">Em vez de continuar imaginando, veja o treinamento por dentro e decida com informação.</span>
