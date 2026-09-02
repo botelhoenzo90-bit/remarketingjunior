@@ -24,8 +24,8 @@ const BenefitsSection = () => (
 
       <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2 lg:grid-cols-3">
         {benefits.map((benefit, i) => (
-          <motion.article key={benefit.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="rounded-2xl border border-white/10 bg-card/60 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/25 bg-primary/10"><benefit.icon className="h-6 w-6 text-primary" /></div>
+          <motion.article key={benefit.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="rounded-2xl border border-white/10 bg-card/60 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/25 bg-primary/10"><benefit.icon className="h-6 w-6 text-primary" /></div>
             <h3 className="font-display text-lg font-black sm:text-xl">{benefit.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{benefit.desc}</p>
           </motion.article>

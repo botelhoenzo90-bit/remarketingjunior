@@ -23,7 +23,7 @@ const FreeLessonsSection = () => (
         {lessons.map((lesson, i) => (
           <motion.article key={lesson.videoId} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
             <div className="relative aspect-video bg-black"><iframe src={`https://www.youtube.com/embed/${lesson.videoId}?rel=0`} title={lesson.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute inset-0 h-full w-full" /></div>
-            <div className="p-5"><div className="mb-2 flex items-center gap-2"><GraduationCap className="h-5 w-5 shrink-0 text-primary" /><h3 className="font-display text-base font-bold text-foreground">{lesson.title}</h3></div><p className="text-sm leading-relaxed text-muted-foreground">{lesson.desc}</p></div>
+            <div className="p-5"><div className="mb-2 flex items-center justify-center gap-2"><GraduationCap className="h-5 w-5 shrink-0 text-primary" /><h3 className="font-display text-base font-bold text-foreground">{lesson.title}</h3></div><p className="text-sm leading-relaxed text-muted-foreground">{lesson.desc}</p></div>
           </motion.article>
         ))}
       </div>

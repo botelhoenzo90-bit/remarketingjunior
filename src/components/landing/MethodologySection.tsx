@@ -34,7 +34,7 @@ const MethodologySection = () => (
             <span className="absolute -top-3 -left-2 font-display text-5xl font-black text-primary/10">
               {i + 1}
             </span>
-            <div className="mb-4 flex items-center gap-3">
+            <div className="mb-4 flex items-center justify-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10">
                 <s.icon className="h-5 w-5 text-accent" />
               </div>

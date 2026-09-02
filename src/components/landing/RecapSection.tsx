@@ -23,8 +23,8 @@ const RecapSection = () => (
       </motion.div>
       <div className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2">
         {groups.map(({ icon: Icon, title, items }, i) => (
-          <motion.div key={title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .05 }} className="rounded-2xl border border-border bg-card/80 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35">
-            <div className="mb-4 flex items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5" /></div><h3 className="font-display text-xl font-black">{title}</h3></div>
+          <motion.div key={title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .05 }} className="rounded-2xl border border-border bg-card/80 p-6 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35">
+            <div className="mb-4 flex items-center justify-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5" /></div><h3 className="font-display text-xl font-black">{title}</h3></div>
             <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{items}</p>
           </motion.div>
         ))}
