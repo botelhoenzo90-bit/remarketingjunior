@@ -3,6 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import RetargetingSection from "@/components/landing/RetargetingSection";
 import FreeLessonsSection from "@/components/landing/FreeLessonsSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
+import CourseContentSection from "@/components/landing/CourseContentSection";
 import BonusSection from "@/components/landing/BonusSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import PricingSection from "@/components/landing/PricingSection";
@@ -20,6 +21,7 @@ const Index = () => {
       <RetargetingSection />
       <FreeLessonsSection />
       <BenefitsSection />
+      <CourseContentSection />
       <BonusSection />
       <TestimonialsSection />
       <PricingSection />
