@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import HeroSection from "@/components/landing/HeroSection";
 import RetargetingSection from "@/components/landing/RetargetingSection";
 import CoursePreviewSection from "@/components/landing/CoursePreviewSection";
+import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
 import FreeLessonsSection from "@/components/landing/FreeLessonsSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import CourseContentSection from "@/components/landing/CourseContentSection";
@@ -21,6 +22,7 @@ const Index = () => {
       <HeroSection />
       <RetargetingSection />
       <CoursePreviewSection />
+      <BeforeAfterSection />
       <FreeLessonsSection />
       <BenefitsSection />
       <CourseContentSection />
