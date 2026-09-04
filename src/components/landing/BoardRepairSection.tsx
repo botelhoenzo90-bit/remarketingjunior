@@ -53,7 +53,7 @@ const advantages = [
   { icon: TrendingUp, title: "Serviços de alto valor", text: "Reparos em placa são os mais bem pagos da assistência técnica." },
   { icon: Cpu, title: "Aparelhos condenados", text: "Recupere celulares que outros técnicos devolvem sem solução." },
   { icon: Wrench, title: "Menos dependência de peças", text: "Resolva o problema na origem em vez de só trocar componentes caros." },
-  { icon: Award, title: "Saia na frente", text: "Poucos técnicos dominam micro soldagem — seja a referência da sua região." },
+  { icon: Award, title: "Pouca concorrência", text: "Poucos técnicos dominam micro soldagem — seja a referência da sua região." },
 ];
 
 const CARD_WIDTH = 220;
@@ -78,8 +78,8 @@ const BoardRepairSection = () => {
       <div className="relative mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
           <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary">Micro soldagem e reparo em placa</motion.span>
-          <h2 className="mt-4 font-display text-3xl font-black sm:text-5xl">Domine a micro soldagem e o reparo em placa para <span className="text-gradient">transformar aparelhos condenados em serviços de alto valor</span> e aumentar seu faturamento como técnico.</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Torne-se um especialista em micro soldagem e reparo em placa e aprenda a realizar os serviços mais lucrativos da assistência técnica.</p>
+          <h2 className="mt-4 font-display text-3xl font-black sm:text-5xl">O <span className="text-gradient">diferencial que poucos técnicos têm</span></h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">Domine micro soldagem e reparo em placa para faturar alto com serviços que a maioria dos técnicos não consegue fazer.</p>
         </div>
 
         <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
