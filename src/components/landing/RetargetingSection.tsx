@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import CtaButton from "./CtaButton";
 
 const doubts = [
   { title: "“Será que eu vou conseguir?”", text: "Você não precisa chegar sabendo. O treinamento organiza o aprendizado para você entender a base, praticar e avançar aos poucos." },
@@ -30,12 +29,6 @@ const RetargetingSection = () => (
         ))}
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto mt-12 max-w-4xl rounded-3xl border border-accent/25 bg-accent/5 p-7 text-center sm:p-9">
-        <ShieldCheck className="mx-auto h-8 w-8 text-accent" />
-        <h3 className="mt-3 font-display text-2xl font-black sm:text-3xl">A melhor forma de decidir é conhecer.</h3>
-        <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">Por isso, você pode assistir às aulas gratuitas e ver a proposta do treinamento antes de chegar à oferta.</p>
-        <CtaButton href="#aulas-gratis" className="mt-6">ASSISTIR AULAS GRÁTIS →</CtaButton>
-      </motion.div>
     </div>
   </SectionWrapper>
 );
