@@ -6,11 +6,13 @@ import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
 import FreeLessonsSection from "@/components/landing/FreeLessonsSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import CourseContentSection from "@/components/landing/CourseContentSection";
+import BoardRepairSection from "@/components/landing/BoardRepairSection";
 import BonusSection from "@/components/landing/BonusSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import PricingSection from "@/components/landing/PricingSection";
 import FAQSection from "@/components/landing/FAQSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
+import SalesNotification from "@/components/landing/SalesNotification";
 
 const Index = () => {
   useEffect(() => {
@@ -26,11 +28,13 @@ const Index = () => {
       <FreeLessonsSection />
       <BenefitsSection />
       <CourseContentSection />
+      <BoardRepairSection />
       <BonusSection />
       <TestimonialsSection />
       <PricingSection />
       <FAQSection />
       <WhatsAppButton />
+      <SalesNotification />
     </div>
   );
 };

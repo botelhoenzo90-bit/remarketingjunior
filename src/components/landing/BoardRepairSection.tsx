@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { TrendingUp, Cpu, Wrench, Award } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 
@@ -48,6 +49,13 @@ const modules = [
   { title: "Face ID", image: imgFaceid },
 ];
 
+const advantages = [
+  { icon: TrendingUp, title: "Serviços de alto valor", text: "Reparos em placa são os mais bem pagos da assistência técnica." },
+  { icon: Cpu, title: "Aparelhos condenados", text: "Recupere celulares que outros técnicos devolvem sem solução." },
+  { icon: Wrench, title: "Menos dependência de peças", text: "Resolva o problema na origem em vez de só trocar componentes caros." },
+  { icon: Award, title: "Saia na frente", text: "Poucos técnicos dominam micro soldagem — seja a referência da sua região." },
+];
+
 const CARD_WIDTH = 220;
 const GAP = 20;
 const TOTAL_WIDTH = modules.length * (CARD_WIDTH + GAP);
@@ -69,9 +77,24 @@ const BoardRepairSection = () => {
       <div className="pointer-events-none absolute inset-0"><div className="absolute inset-0 bg-grid opacity-30" /><div className="absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-20 blur-[140px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55%), transparent 70%)" }} /></div>
       <div className="relative mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
-          <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary">Parte avançada do treinamento</motion.span>
-          <h2 className="mt-4 font-display text-3xl font-black sm:text-5xl">É aqui que o treinamento <span className="text-gradient">fica mais técnico.</span></h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Diagnóstico, eletrônica e reparos em placa: veja alguns dos assuntos abordados no conteúdo avançado para Android e iPhone.</p>
+          <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-black uppercase tracking-wider text-primary">Micro soldagem e reparo em placa</motion.span>
+          <h2 className="mt-4 font-display text-3xl font-black sm:text-5xl">Domine a micro soldagem e o reparo em placa para <span className="text-gradient">transformar aparelhos condenados em serviços de alto valor</span> e aumentar seu faturamento como técnico.</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Torne-se um especialista em micro soldagem e reparo em placa e aprenda a realizar os serviços mais lucrativos da assistência técnica.</p>
+        </div>
+
+        <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {advantages.map(({ icon: Icon, title, text }) => (
+            <motion.div key={title} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl border border-border bg-card p-5 text-center">
+              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5" /></div>
+              <p className="font-display text-base font-black">{title}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{text}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mb-8 text-center">
+          <h3 className="font-display text-2xl font-black sm:text-3xl">Aprenda Reparos em Placas <span className="text-gradient">iPhone, Android e Tablets</span></h3>
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">Domine as técnicas de micro soldagem e reparo de circuitos integrados. O diferencial que separa técnicos comuns de profissionais que faturam alto.</p>
         </div>
       </div>
 
