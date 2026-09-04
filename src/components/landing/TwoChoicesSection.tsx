@@ -1,6 +1,6 @@
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
-import { CheckCircle2, XCircle, X, ArrowRight } from "lucide-react";
+import { CheckCircle2, XCircle, X } from "lucide-react";
 
 const TwoChoicesSection = () => (
   <SectionWrapper className="py-20 sm:py-24">

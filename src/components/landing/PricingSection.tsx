@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, ShieldCheck, Lock, ArrowRight } from "lucide-react";
+import { Check, ShieldCheck, Lock } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 import garantiaSelo from "@/assets/garantia-selo.png";
