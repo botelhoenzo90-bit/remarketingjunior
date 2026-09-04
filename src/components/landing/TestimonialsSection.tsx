@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
 
         <div className="mt-5 flex justify-center gap-1.5">{Array.from({ length: Math.min(10, screenshots.length) }).map((_, i) => <button key={i} aria-label={`Ver depoimento ${i + 1}`} onClick={() => setIndex(i)} className={`h-2 rounded-full transition-all ${index === i ? "w-7 bg-primary" : "w-2 bg-muted-foreground/30"}`} />)}</div>
         <p className="mx-auto mt-5 max-w-xl text-xs text-muted-foreground">Os relatos acima são apresentados como prova social visual. Não adicionamos números ou resultados que não estejam nos próprios depoimentos.</p>
-        <CtaButton href="#mentor" className="mt-8">QUERO CONHECER QUEM ESTÁ POR TRÁS DO CURSO →</CtaButton>
+        <CtaButton href="#mentor" className="mt-8">CONHECER O MENTOR →</CtaButton>
       </div>
     </SectionWrapper>
   );

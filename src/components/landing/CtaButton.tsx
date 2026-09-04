@@ -15,7 +15,7 @@ const CtaButton = ({ children, className = "", href = "#pricing", showIcon = tru
       href={href}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
-      className={`inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground animate-pulse-glow transition-colors hover:brightness-110 ${className}`}
+      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-accent px-4 py-4 text-sm font-bold text-accent-foreground animate-pulse-glow transition-colors hover:brightness-110 sm:px-6 sm:text-base lg:px-8 lg:text-lg ${className}`}
     >
       {showIcon && <Zap className="h-5 w-5" />}
       {children}

@@ -46,7 +46,7 @@ const MethodologySection = () => (
         ))}
       </div>
       <div className="mt-10 flex justify-center">
-        <CtaButton className="whitespace-nowrap">QUERO USAR O MÉTODO F.A.T.U.R.A.!</CtaButton>
+        <CtaButton className="whitespace-nowrap">USAR MÉTODO F.A.T.U.R.A.!</CtaButton>
       </div>
     </div>
   </SectionWrapper>

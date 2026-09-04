@@ -28,8 +28,7 @@ const FreeLessonsSection = () => (
         ))}
       </div>
 
-      <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-accent/20 bg-card/80 p-6 text-center"><ShieldCheck className="mx-auto h-6 w-6 text-accent" /><h3 className="mt-3 font-display text-xl font-black sm:text-2xl">Gostou do que viu?</h3><p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">Então agora faz sentido conhecer o restante do conteúdo, os bônus, o suporte e a condição atual.</p></div>
-      <div className="mt-8 text-center"><CtaButton href="#beneficios">QUERO ENTENDER O QUE VOU APRENDER →</CtaButton></div>
+      <div className="mt-8 text-center"><CtaButton href="#beneficios">VER BÔNUS EXCLUSIVOS →</CtaButton></div>
     </div>
   </SectionWrapper>
 );

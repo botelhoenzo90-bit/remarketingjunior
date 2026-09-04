@@ -30,7 +30,7 @@ const BenefitsSection = () => (
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center"><CtaButton href="#bonus">VER O QUE VEM ALÉM DO CURSO →</CtaButton></div>
+      <div className="mt-8 flex justify-center"><CtaButton href="#bonus">VER BÔNUS EXCLUSIVOS →</CtaButton></div>
     </div>
   </SectionWrapper>
 );

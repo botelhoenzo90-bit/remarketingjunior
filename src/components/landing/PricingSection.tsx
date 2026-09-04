@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, ShieldCheck, Lock, ArrowRight } from "lucide-react";
+import { Check, ShieldCheck, Lock } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 import garantiaSelo from "@/assets/garantia-selo.png";
@@ -41,7 +41,7 @@ const PricingSection = () => (
             <p className="font-display text-6xl font-black leading-none text-accent sm:text-7xl">R$ 147</p>
             <p className="mt-2 text-sm text-muted-foreground">ou 12x de <strong className="text-foreground">R$ 12,25</strong></p>
             <p className="mx-auto mt-4 rounded-full bg-accent/10 px-4 py-2 text-sm font-black text-accent">Economia de R$ 550,00</p>
-            <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-7 w-full py-5 text-base sm:text-lg">QUERO TER ACESSO AO CURSO <ArrowRight className="h-5 w-5" /></CtaButton>
+            <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-7 w-full py-5 text-base sm:text-lg">QUERO ACESSO AGORA →</CtaButton>
             <p className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground"><Lock className="h-3.5 w-3.5" /> Pagamento via cartão ou PIX</p>
             <div className="mt-6 grid grid-cols-3 gap-2 border-t border-border pt-5 text-[11px] font-bold text-muted-foreground"><span className="flex flex-col items-center gap-1"><ShieldCheck className="h-5 w-5 text-primary" />7 dias</span><span className="flex flex-col items-center gap-1"><Check className="h-5 w-5 text-primary" />Acesso imediato</span><span className="flex flex-col items-center gap-1"><Check className="h-5 w-5 text-primary" />5 bônus</span></div>
           </div>

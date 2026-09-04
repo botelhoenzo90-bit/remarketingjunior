@@ -25,7 +25,7 @@ const FAQSection = () => (
         <Accordion type="single" collapsible className="mt-10 space-y-3">
           {faqs.map((faq, i) => <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 data-[state=open]:border-primary/40 data-[state=open]:shadow-[0_10px_35px_hsl(192_95%_55%/0.08)]"><AccordionTrigger className="py-5 text-left font-display text-sm font-bold text-foreground hover:text-primary hover:no-underline sm:text-base">{faq.q}</AccordionTrigger><AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">{faq.a}</AccordionContent></AccordionItem>)}
         </Accordion>
-        <div className="mt-9 text-center"><CtaButton href="#pricing">JÁ DECIDI. QUERO VER A OFERTA →</CtaButton></div>
+        <div className="mt-9 text-center"><CtaButton href="#pricing">QUERO A OFERTA →</CtaButton></div>
       </div>
     </SectionWrapper>
 

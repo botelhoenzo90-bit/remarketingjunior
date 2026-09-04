@@ -44,7 +44,6 @@ const modules = [
 const CARD_W = 220;
 const GAP = 20;
 const TOTAL = modules.length * (CARD_W + GAP);
-const DURATION = modules.length * 3;
 
 const ModuleCard = ({ title, image }: { title: string; image: string }) => (
   <div className="group w-[200px] flex-shrink-0 select-none sm:w-[220px]">
@@ -96,8 +95,8 @@ const CourseContentSection = () => {
 
       <div className="w-full overflow-hidden">
         <div
-          className="board-marquee flex gap-5"
-          style={{ width: `${TOTAL * 2}px`, animationDuration: `${DURATION}s` }}
+          className="board-marquee flex gap-5 [animation-duration:25s] max-sm:[animation-duration:16s]"
+          style={{ width: `${TOTAL * 2}px` }}
         >
           {doubled.map((m, i) => (
             <ModuleCard key={`${m.title}-${i}`} title={m.title} image={m.image} />
@@ -113,7 +112,7 @@ const CourseContentSection = () => {
           </p>
         </div>
         <div className="mt-7 flex flex-col items-center justify-center">
-          <CtaButton href="#pricing">QUERO CONHECER O CURSO →</CtaButton>
+          <CtaButton href="#pricing">QUERO O CURSO →</CtaButton>
           <p className="mt-3 text-center text-sm font-semibold text-muted-foreground">
             🔒 Garantia de 7 dias para você conhecer o treinamento com tranquilidade.
           </p>

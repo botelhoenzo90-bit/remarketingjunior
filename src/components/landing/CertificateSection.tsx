@@ -15,7 +15,7 @@ const CertificateSection = () => (
       <div className="mt-10 flex flex-col items-center">
         <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="overflow-hidden rounded-2xl border-2 border-primary/30 bg-card shadow-2xl shadow-primary/10 max-w-lg"><img src={certificateImg} alt="Exemplo de certificado do Mestre da Manutenção" className="w-full" /></motion.div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">{["Certificado de conclusão", "Documento para registrar sua formação", "Emitido pela JR TEC"].map((item) => <span key={item} className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2.5 text-sm font-semibold text-accent"><CheckCircle className="h-4 w-4" /> {item}</span>)}</div>
-        <CtaButton href="#pricing" className="mt-9">QUERO VER A OFERTA →</CtaButton>
+        <CtaButton href="#pricing" className="mt-9">VER OFERTA →</CtaButton>
       </div>
     </div>
   </SectionWrapper>

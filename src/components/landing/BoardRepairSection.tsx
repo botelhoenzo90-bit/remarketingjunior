@@ -101,8 +101,7 @@ const BoardRepairSection = () => {
       <div className="w-full overflow-hidden"><div className="board-marquee flex gap-5" style={{ width: `${TOTAL_WIDTH * 2}px`, animationDuration: `${DURATION}s` }}>{doubled.map((m, i) => <ModuleCard key={`${m.title}-${i}`} title={m.title} image={m.image} />)}</div></div>
 
       <div className="relative mx-auto max-w-6xl px-4">
-        <div className="mx-auto mt-9 max-w-3xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center"><p className="font-display text-xl font-black sm:text-2xl">Não é só trocar peça. É entender o que está acontecendo na placa.</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">Essa é a diferença entre acompanhar um reparo e começar a construir raciocínio técnico.</p></div>
-        <div className="mt-7 flex justify-center"><CtaButton href="#bonus">VER O QUE MAIS ESTÁ INCLUSO →</CtaButton></div>
+        <div className="mt-7 flex justify-center"><CtaButton href="#bonus">VER TUDO INCLUSO →</CtaButton></div>
       </div>
     </SectionWrapper>
   );
