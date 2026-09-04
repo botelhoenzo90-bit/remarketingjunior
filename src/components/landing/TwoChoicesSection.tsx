@@ -43,7 +43,7 @@ const TwoChoicesSection = () => (
         </div>
       </div>
 
-      <div className="mt-10 text-center"><p className="mb-5 text-sm font-semibold text-muted-foreground">Se você ainda não assistiu às aulas gratuitas, comece por elas.</p><CtaButton href="#pricing" className="whitespace-nowrap">EU ESCOLHO COMEÇAR → <ArrowRight className="ml-1 h-4 w-4" /></CtaButton></div>
+      <div className="mt-10 text-center"><p className="mb-5 text-sm font-semibold text-muted-foreground">Se você ainda não assistiu às aulas gratuitas, comece por elas.</p><CtaButton href="#pricing" className="whitespace-nowrap">COMEÇAR AGORA →</CtaButton></div>
     </div>
   </SectionWrapper>
 );

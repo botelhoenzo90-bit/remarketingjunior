@@ -34,7 +34,7 @@ const RetargetingSection = () => (
         <ShieldCheck className="mx-auto h-8 w-8 text-accent" />
         <h3 className="mt-3 font-display text-2xl font-black sm:text-3xl">A melhor forma de decidir é conhecer.</h3>
         <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">Por isso, você pode assistir às aulas gratuitas e ver a proposta do treinamento antes de chegar à oferta.</p>
-        <CtaButton href="#aulas-gratis" className="mt-6">VER AS AULAS GRATUITAS <ArrowRight className="h-4 w-4" /></CtaButton>
+        <CtaButton href="#aulas-gratis" className="mt-6">ASSISTIR AULAS GRÁTIS →</CtaButton>
       </motion.div>
     </div>
   </SectionWrapper>

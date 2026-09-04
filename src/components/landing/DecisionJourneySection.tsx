@@ -35,7 +35,7 @@ const DecisionJourneySection = () => (
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary"><Target className="h-7 w-7" /></div>
         <h3 className="mt-4 font-display text-2xl font-black sm:text-4xl">Não compre no escuro. Coloque o curso à prova.</h3>
         <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">Assista às aulas gratuitas, veja a didática e conheça o treinamento por dentro. Depois, decida com muito mais segurança.</p>
-        <CtaButton href="#aulas-gratis" className="mt-7">QUERO TESTAR AS AULAS GRATUITAS →</CtaButton>
+        <CtaButton href="#aulas-gratis" className="mt-7">TESTAR AULAS GRÁTIS →</CtaButton>
       </motion.div>
     </div>
   </SectionWrapper>

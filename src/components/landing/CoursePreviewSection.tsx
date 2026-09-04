@@ -43,7 +43,7 @@ const CoursePreviewSection = () => (
         <span className="inline-flex items-center justify-center gap-2"><CheckCircle2 className="h-4 w-4 text-accent" /> Estudo online</span>
       </div>
 
-      <div className="mt-9 flex justify-center"><CtaButton href="#aulas-gratis">AGORA VEJA UMA AULA NA PRÁTICA →</CtaButton></div>
+      <div className="mt-9 flex justify-center"><CtaButton href="#aulas-gratis">VER AULA PRÁTICA →</CtaButton></div>
     </div>
   </SectionWrapper>
 );

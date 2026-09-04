@@ -96,7 +96,7 @@ const BeforeAfterSection = () => (
           Você não precisa saber tudo para começar. Precisa apenas de um primeiro passo e de um conteúdo que faça sentido para a sua evolução.
         </p>
         <div className="mt-6">
-          <CtaButton href="#curso-por-dentro">QUERO VER O CURSO POR DENTRO →</CtaButton>
+          <CtaButton href="#curso-por-dentro">VER CURSO POR DENTRO →</CtaButton>
         </div>
       </div>
     </div>

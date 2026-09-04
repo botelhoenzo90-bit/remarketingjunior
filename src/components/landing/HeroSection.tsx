@@ -42,7 +42,7 @@ const HeroSection = () => (
         </div>
       </motion.div>
 
-      <CtaButton href="#aulas-gratis" className="w-full max-w-md px-6 py-5 text-base sm:text-lg">QUERO VER AS AULAS GRATUITAS →</CtaButton>
+      <CtaButton href="#aulas-gratis" className="w-full max-w-md px-6 py-5 text-base sm:text-lg">VER AULAS GRÁTIS AGORA →</CtaButton>
       <p className="mt-3 text-xs text-muted-foreground">Veja o conteúdo primeiro. A oferta completa aparece mais abaixo.</p>
     </div>
 

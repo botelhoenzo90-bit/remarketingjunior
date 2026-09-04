@@ -32,7 +32,7 @@ const MentorSection = () => (
         </motion.div>
       </div>
 
-      <div className="mt-10 text-center"><CtaButton href="#conteudo">QUERO VER O CONTEÚDO →</CtaButton></div>
+      <div className="mt-10 text-center"><CtaButton href="#conteudo">VER CONTEÚDO →</CtaButton></div>
     </div>
   </SectionWrapper>
 );
