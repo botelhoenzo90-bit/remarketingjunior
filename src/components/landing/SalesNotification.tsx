@@ -34,7 +34,7 @@ const SalesNotification = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-4 z-50">
+    <div className="fixed bottom-4 left-3 z-50">
       <AnimatePresence>
         {visible && (
           <motion.div
@@ -42,15 +42,15 @@ const SalesNotification = () => {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -80, scale: 0.8 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="flex items-center gap-3 rounded-xl bg-accent px-4 py-3 shadow-lg max-w-[280px]"
+            className="flex max-w-[230px] items-center gap-2.5 rounded-lg bg-accent px-3 py-2 shadow-lg"
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-foreground/20 text-sm font-bold text-accent-foreground">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-foreground/20 text-xs font-bold text-accent-foreground">
               {current.name.charAt(0)}
             </div>
-            <div className="min-w-0">
-              <p className="text-sm font-bold text-accent-foreground">{current.name}</p>
-              <p className="text-xs text-accent-foreground/80">de {current.city}</p>
-              <p className="text-xs text-accent-foreground/80">Acabou de adquirir o curso!</p>
+            <div className="min-w-0 leading-tight">
+              <p className="text-xs font-bold text-accent-foreground">{current.name}</p>
+              <p className="text-[11px] text-accent-foreground/80">de {current.city}</p>
+              <p className="text-[11px] text-accent-foreground/80">Acabou de adquirir o curso!</p>
             </div>
           </motion.div>
         )}
