@@ -2,28 +2,17 @@ import { motion } from "framer-motion";
 import { MessageSquareQuote } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
-import t1 from "@/assets/testimonial-1.png";
-import t2 from "@/assets/testimonial-2.png";
-import t3 from "@/assets/testimonial-3.png";
-import t4 from "@/assets/testimonial-4.png";
-import t5 from "@/assets/testimonial-5.png";
-import t6 from "@/assets/testimonial-6.png";
-import t7 from "@/assets/testimonial-7.png";
-import t8 from "@/assets/testimonial-8.png";
-import t9 from "@/assets/testimonial-9.png";
-import t10 from "@/assets/testimonial-10.png";
-import tn1 from "@/assets/t-new-1.png.asset.json";
-import tn2 from "@/assets/t-new-2.png.asset.json";
-import tn3 from "@/assets/t-new-3.png.asset.json";
-import tn4 from "@/assets/t-new-4.png.asset.json";
-import tn5 from "@/assets/t-new-5.png.asset.json";
-import tn6 from "@/assets/t-new-6.png.asset.json";
-import tn7 from "@/assets/t-new-7.png.asset.json";
-import tn8 from "@/assets/t-new-8.png.asset.json";
-import tn9 from "@/assets/t-new-9.png.asset.json";
-import tn10 from "@/assets/t-new-10.png.asset.json";
+import d1 from "@/assets/depoimento-novo-1.jpg.asset.json";
+import d2 from "@/assets/depoimento-novo-2.jpg.asset.json";
+import d3 from "@/assets/depoimento-novo-3.jpg.asset.json";
+import d4 from "@/assets/depoimento-novo-4.jpg.asset.json";
+import d5 from "@/assets/depoimento-novo-5.jpg.asset.json";
+import d6 from "@/assets/depoimento-novo-6.jpg.asset.json";
+import d7 from "@/assets/depoimento-novo-7.jpg.asset.json";
+import d8 from "@/assets/depoimento-novo-8.jpg.asset.json";
+import d9 from "@/assets/depoimento-novo-9.jpg.asset.json";
 
-const screenshots = [tn1.url, tn2.url, tn3.url, tn4.url, tn5.url, tn6.url, tn7.url, tn8.url, tn9.url, tn10.url, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10];
+const screenshots = [d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url];
 const loopedScreenshots = [...screenshots, ...screenshots];
 
 const TestimonialsSection = () => (
@@ -34,8 +23,6 @@ const TestimonialsSection = () => (
       <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Veja os depoimentos passando continuamente em uma única fileira, como um mural de experiências reais de alunos.</p>
 
       <div className="relative mx-auto mt-10 max-w-[1500px] overflow-hidden py-3">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent sm:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent sm:w-24" />
         <motion.div
           className="flex w-max gap-4 sm:gap-5"
           animate={{ x: ["0%", "-50%"] }}
