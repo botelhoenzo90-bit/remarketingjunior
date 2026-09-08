@@ -1,25 +1,31 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/landing/HeroSection";
-import RetargetingSection from "@/components/landing/RetargetingSection";
+import TrustCarousel from "@/components/landing/TrustCarousel";
 import MemberAreaSection from "@/components/landing/MemberAreaSection";
-import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import PricingSection from "@/components/landing/PricingSection";
-import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
+import GuaranteeSection from "@/components/landing/GuaranteeSection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import MentorSection from "@/components/landing/MentorSection";
+import FAQSection from "@/components/landing/FAQSection";
+import SignupSection from "@/components/landing/SignupSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Mestre da Manutenção | Aprenda Manutenção de Celulares";
+    document.title = "Mestre da Manutenção | Curso de Manutenção de Celulares";
   }, []);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
       <HeroSection />
-      <RetargetingSection />
+      <TrustCarousel />
       <MemberAreaSection />
-      <TestimonialsSection />
       <PricingSection />
-      <BeforeAfterSection />
+      <GuaranteeSection />
+      <TestimonialsSection />
+      <MentorSection />
+      <FAQSection />
+      <SignupSection />
       <WhatsAppButton />
     </div>
   );
