@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Check, ShieldCheck, TicketPercent } from "lucide-react";
+import { Check, PlayCircle, ShieldCheck, TicketPercent } from "lucide-react";
 import CtaButton from "./CtaButton";
+import vslCover from "@/assets/vsl-cover.png";
 
 const HeroSection = () => (
   <section id="inicio" className="relative overflow-hidden bg-[#050b12] py-20 text-white sm:py-28">
@@ -17,7 +18,15 @@ const HeroSection = () => (
       <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mx-auto mt-5 max-w-5xl font-display text-4xl font-black leading-[1.03] sm:text-5xl lg:text-6xl">Curso de manutenção em celulares do básico, até o avançado em reparos em placa em <span className="text-cyan-300">iPhone e Android.</span></motion.h1>
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">Pare de ficar perdido, sem saber por onde começar. Nesse treinamento você vai aprender como fazer análise, como encontrar o defeito e como fazer reparos em placa avançados.</motion.p>
 
-      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.28 }} className="mx-auto mt-9 max-w-xl rounded-3xl border border-cyan-400/30 bg-white/[0.04] p-6 shadow-[0_0_60px_rgba(34,211,238,0.08)] sm:p-8">
+      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.26 }} className="mx-auto mt-9 max-w-4xl">
+        <div className="mb-3 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-primary sm:text-sm"><PlayCircle className="h-4 w-4" /> Veja a apresentação</div>
+        <div className="relative aspect-video overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-[0_0_50px_hsl(192_95%_55%/0.2)] sm:rounded-3xl">
+          <img src={vslCover} alt="Apresentação do Mestre da Manutenção" className="absolute inset-0 h-full w-full object-cover" />
+          <iframe src="https://www.youtube.com/embed/3ONlCDPSsEY?rel=0" title="Apresentação do Mestre da Manutenção" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute inset-0 h-full w-full" />
+        </div>
+      </motion.div>
+
+      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.32 }} className="mx-auto mt-9 max-w-xl rounded-3xl border border-cyan-400/30 bg-white/[0.04] p-6 shadow-[0_0_60px_rgba(34,211,238,0.08)] sm:p-8">
         <div className="inline-flex items-center gap-2 rounded-xl bg-red-700 px-4 py-3 text-xs font-black uppercase tracking-wider text-white shadow-[0_0_25px_rgba(185,28,28,0.35)]">
           30% de desconto válido somente hoje às 23:59
         </div>
