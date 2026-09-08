@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/landing/HeroSection";
 import TrustCarousel from "@/components/landing/TrustCarousel";
-import MemberAreaSection from "@/components/landing/MemberAreaSection";
+import CoursePreviewSection from "@/components/landing/CoursePreviewSection";
+import CourseContentSection from "@/components/landing/CourseContentSection";
 import PricingSection from "@/components/landing/PricingSection";
 import GuaranteeSection from "@/components/landing/GuaranteeSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
@@ -19,7 +20,8 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden bg-background">
       <HeroSection />
       <TrustCarousel />
-      <MemberAreaSection />
+      <CoursePreviewSection />
+      <CourseContentSection />
       <PricingSection />
       <GuaranteeSection />
       <TestimonialsSection />
