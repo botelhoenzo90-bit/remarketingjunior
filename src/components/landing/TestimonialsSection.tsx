@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { ChevronLeft, ChevronRight, MessageSquareQuote } from "lucide-react";
 import CtaButton from "./CtaButton";
@@ -32,28 +32,35 @@ const TestimonialsSection = () => {
   const go = useCallback((direction: number) => setIndex((current) => (current + direction + screenshots.length) % screenshots.length), []);
 
   useEffect(() => {
-    const timer = window.setInterval(() => go(1), 4500);
+    const timer = window.setInterval(() => go(1), 4000);
     return () => window.clearInterval(timer);
   }, [go]);
 
+  const visible = [0, 1, 2].map((offset) => screenshots[(index + offset) % screenshots.length]);
+
   return (
     <SectionWrapper id="depoimentos" className="bg-radial-top py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4 text-center">
+      <div className="mx-auto max-w-7xl px-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary"><MessageSquareQuote className="h-4 w-4" /> Experiências de alunos</span>
         <h2 className="mt-5 font-display text-3xl font-black leading-tight sm:text-5xl">Antes de decidir, <span className="text-gradient">veja os relatos.</span></h2>
-        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Aqui estão depoimentos em formato de captura. Leia com calma e observe as experiências compartilhadas por quem já passou pelo treinamento.</p>
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Depoimentos reais em formato de captura, agora organizados em um carrossel horizontal para você deslizar e comparar as experiências.</p>
 
-        <div className="relative mx-auto mt-10 max-w-md select-none cursor-grab active:cursor-grabbing" onPointerDown={(event) => { dragStart.current = event.clientX; }} onPointerUp={(event) => { if (dragStart.current === null) return; const diff = event.clientX - dragStart.current; if (Math.abs(diff) > 50) go(diff < 0 ? 1 : -1); dragStart.current = null; }}>
-          <div className="overflow-hidden rounded-3xl border-2 border-primary/30 bg-card p-2 shadow-[0_20px_70px_hsl(192_95%_55%/0.12)]">
-            <AnimatePresence mode="wait"><motion.img key={index} src={screenshots[index]} alt="Depoimento de aluno" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.25 }} className="block max-h-[70vh] w-full rounded-2xl object-contain" loading="eager" /></AnimatePresence>
+        <div className="relative mx-auto mt-10 max-w-6xl select-none" onPointerDown={(event) => { dragStart.current = event.clientX; }} onPointerUp={(event) => { if (dragStart.current === null) return; const diff = event.clientX - dragStart.current; if (Math.abs(diff) > 50) go(diff < 0 ? 1 : -1); dragStart.current = null; }}>
+          <div className="grid gap-5 md:grid-cols-3">
+            {visible.map((src, i) => (
+              <motion.article key={`${src}-${index}-${i}`} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35, delay: i * 0.05 }} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_55px_rgba(0,0,0,0.18)]">
+                <div className="flex aspect-[4/3] items-center justify-center bg-white p-3 sm:p-4"><img src={src} alt={`Depoimento de aluno ${((index + i) % screenshots.length) + 1}`} className="max-h-full max-w-full object-contain" loading={i === 0 ? "eager" : "lazy"} /></div>
+              </motion.article>
+            ))}
           </div>
-          <button aria-label="Depoimento anterior" onClick={() => go(-1)} className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/95 text-foreground shadow-lg transition hover:border-primary/50"><ChevronLeft className="h-5 w-5" /></button>
-          <button aria-label="Próximo depoimento" onClick={() => go(1)} className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/95 text-foreground shadow-lg transition hover:border-primary/50"><ChevronRight className="h-5 w-5" /></button>
+
+          <button type="button" aria-label="Depoimentos anteriores" onClick={() => go(-1)} className="absolute -left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:border-primary/50 sm:-left-5"><ChevronLeft className="h-5 w-5" /></button>
+          <button type="button" aria-label="Próximos depoimentos" onClick={() => go(1)} className="absolute -right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:border-primary/50 sm:-right-5"><ChevronRight className="h-5 w-5" /></button>
         </div>
 
-        <div className="mt-5 flex justify-center gap-1.5">{Array.from({ length: Math.min(10, screenshots.length) }).map((_, i) => <button key={i} aria-label={`Ver depoimento ${i + 1}`} onClick={() => setIndex(i)} className={`h-2 rounded-full transition-all ${index === i ? "w-7 bg-primary" : "w-2 bg-muted-foreground/30"}`} />)}</div>
+        <div className="mt-6 flex justify-center gap-1.5">{Array.from({ length: Math.min(10, screenshots.length) }).map((_, i) => <button type="button" key={i} aria-label={`Ver depoimentos a partir de ${i + 1}`} onClick={() => setIndex(i)} className={`h-2 rounded-full transition-all ${index === i ? "w-7 bg-primary" : "w-2 bg-muted-foreground/30"}`} />)}</div>
         <p className="mx-auto mt-5 max-w-xl text-xs text-muted-foreground">Os relatos acima são apresentados como prova social visual. Não adicionamos números ou resultados que não estejam nos próprios depoimentos.</p>
-        <CtaButton href="#mentor" className="mt-8">CONHECER O MENTOR →</CtaButton>
+        <CtaButton href="#pricing" className="mt-8">QUERO CONHECER A OFERTA →</CtaButton>
       </div>
     </SectionWrapper>
   );
