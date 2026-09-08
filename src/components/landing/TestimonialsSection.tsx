@@ -21,8 +21,16 @@ import d16 from "@/assets/depoimento-novo-16.jpg.asset.json";
 import d17 from "@/assets/depoimento-novo-17.jpg.asset.json";
 import d18 from "@/assets/depoimento-novo-18.jpg.asset.json";
 import d19 from "@/assets/depoimento-novo-19.jpg.asset.json";
+import d20 from "@/assets/depoimento-novo-20.jpg.asset.json";
+import d21 from "@/assets/depoimento-novo-21.jpg.asset.json";
+import d22 from "@/assets/depoimento-novo-22.jpg.asset.json";
+import d23 from "@/assets/depoimento-novo-23.jpg.asset.json";
+import d24 from "@/assets/depoimento-novo-24.jpg.asset.json";
+import d25 from "@/assets/depoimento-novo-25.jpg.asset.json";
+import d26 from "@/assets/depoimento-novo-26.jpg.asset.json";
+import d27 from "@/assets/depoimento-novo-27.jpg.asset.json";
 
-const screenshots = [d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url, d10.url, d11.url, d12.url, d13.url, d14.url, d15.url, d16.url, d17.url, d18.url, d19.url];
+const screenshots = [d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url, d10.url, d11.url, d12.url, d13.url, d14.url, d15.url, d16.url, d17.url, d18.url, d19.url, d20.url, d21.url, d22.url, d23.url, d24.url, d25.url, d26.url, d27.url];
 const loopedScreenshots = [...screenshots, ...screenshots];
 
 const TestimonialsSection = () => (
