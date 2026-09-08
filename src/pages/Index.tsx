@@ -1,18 +1,11 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/landing/HeroSection";
 import RetargetingSection from "@/components/landing/RetargetingSection";
-import CoursePreviewSection from "@/components/landing/CoursePreviewSection";
-import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
-import FreeLessonsSection from "@/components/landing/FreeLessonsSection";
-import BenefitsSection from "@/components/landing/BenefitsSection";
-import CourseContentSection from "@/components/landing/CourseContentSection";
-import BoardRepairSection from "@/components/landing/BoardRepairSection";
-import BonusSection from "@/components/landing/BonusSection";
+import MemberAreaSection from "@/components/landing/MemberAreaSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
 import PricingSection from "@/components/landing/PricingSection";
-import FAQSection from "@/components/landing/FAQSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
-import SalesNotification from "@/components/landing/SalesNotification";
 
 const Index = () => {
   useEffect(() => {
@@ -23,18 +16,11 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden bg-background">
       <HeroSection />
       <RetargetingSection />
-      <CoursePreviewSection />
-      <BeforeAfterSection />
-      <FreeLessonsSection />
-      <BenefitsSection />
-      <CourseContentSection />
-      <BoardRepairSection />
+      <MemberAreaSection />
       <TestimonialsSection />
-      <BonusSection />
+      <BeforeAfterSection />
       <PricingSection />
-      <FAQSection />
       <WhatsAppButton />
-      <SalesNotification />
     </div>
   );
 };
