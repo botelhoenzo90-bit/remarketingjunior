@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import SectionWrapper from "./SectionWrapper";
 import { ChevronLeft, ChevronRight, MessageSquareQuote } from "lucide-react";
+import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 import t1 from "@/assets/testimonial-1.png";
 import t2 from "@/assets/testimonial-2.png";
@@ -43,17 +43,16 @@ const TestimonialsSection = () => {
       <div className="mx-auto max-w-7xl px-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary"><MessageSquareQuote className="h-4 w-4" /> Experiências de alunos</span>
         <h2 className="mt-5 font-display text-3xl font-black leading-tight sm:text-5xl">Antes de decidir, <span className="text-gradient">veja os relatos.</span></h2>
-        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Depoimentos reais em formato de captura, agora organizados em um carrossel horizontal para você deslizar e comparar as experiências.</p>
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Depoimentos em formato de captura, organizados em um carrossel horizontal para você deslizar e conhecer as experiências.</p>
 
         <div className="relative mx-auto mt-10 max-w-6xl select-none" onPointerDown={(event) => { dragStart.current = event.clientX; }} onPointerUp={(event) => { if (dragStart.current === null) return; const diff = event.clientX - dragStart.current; if (Math.abs(diff) > 50) go(diff < 0 ? 1 : -1); dragStart.current = null; }}>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid items-stretch gap-5 md:grid-cols-3">
             {visible.map((src, i) => (
-              <motion.article key={`${src}-${index}-${i}`} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35, delay: i * 0.05 }} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_55px_rgba(0,0,0,0.18)]">
-                <div className="flex aspect-[4/3] items-center justify-center bg-white p-3 sm:p-4"><img src={src} alt={`Depoimento de aluno ${((index + i) % screenshots.length) + 1}`} className="max-h-full max-w-full object-contain" loading={i === 0 ? "eager" : "lazy"} /></div>
+              <motion.article key={`${src}-${index}-${i}`} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35, delay: i * 0.05 }} className="flex min-h-[340px] items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-card p-2 shadow-[0_22px_65px_rgba(0,0,0,0.2)] sm:min-h-[400px] sm:p-3">
+                <img src={src} alt={`Depoimento de aluno ${((index + i) % screenshots.length) + 1}`} className="h-full max-h-[560px] w-full object-contain" loading={i === 0 ? "eager" : "lazy"} />
               </motion.article>
             ))}
           </div>
-
           <button type="button" aria-label="Depoimentos anteriores" onClick={() => go(-1)} className="absolute -left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:border-primary/50 sm:-left-5"><ChevronLeft className="h-5 w-5" /></button>
           <button type="button" aria-label="Próximos depoimentos" onClick={() => go(1)} className="absolute -right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:border-primary/50 sm:-right-5"><ChevronRight className="h-5 w-5" /></button>
         </div>
