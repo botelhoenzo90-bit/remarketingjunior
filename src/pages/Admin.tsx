@@ -33,7 +33,7 @@ const Admin = () => {
 
   const exportCsv = () => {
     const header = "Nome,Email,Telefone,Data\n";
-    const rows = leads.map((lead) => [lead.name, lead.email, lead.phone, new Date(lead.createdAt).toLocaleString("pt-BR")].map((value) => `"${value.replaceAll('"', '""')}"`).join(",")).join("\n");
+    const rows = leads.map((lead) => [lead.name, lead.email, lead.phone, new Date(lead.createdAt).toLocaleString("pt-BR")].map((value) => `"${value.replace(/"/g, '""')}"`).join(",")).join("\n");
     const blob = new Blob([header + rows], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
