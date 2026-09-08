@@ -3,8 +3,8 @@ import HeroSection from "@/components/landing/HeroSection";
 import RetargetingSection from "@/components/landing/RetargetingSection";
 import MemberAreaSection from "@/components/landing/MemberAreaSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
-import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
 import PricingSection from "@/components/landing/PricingSection";
+import BeforeAfterSection from "@/components/landing/BeforeAfterSection";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
 
 const Index = () => {
@@ -18,8 +18,8 @@ const Index = () => {
       <RetargetingSection />
       <MemberAreaSection />
       <TestimonialsSection />
-      <BeforeAfterSection />
       <PricingSection />
+      <BeforeAfterSection />
       <WhatsAppButton />
     </div>
   );
