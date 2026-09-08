@@ -16,7 +16,7 @@ const HeroSection = () => (
 
     <div className="fixed left-0 right-0 top-0 z-50 w-full bg-red-600 px-3 py-2.5 text-center shadow-[0_8px_30px_rgba(220,38,38,0.35)] sm:py-3">
       <p className="mx-auto max-w-6xl text-[10px] font-black uppercase leading-tight tracking-[0.06em] text-white sm:text-xs">
-        ⚠️ ÚLTIMA VEZ QUE VOCÊ VAI RECEBER ESTA OPORTUNIDADE! <span className="mx-1 inline-block text-yellow-300">•</span> MESTRE DA MANUTENÇÃO <span className="mx-1 inline-block text-yellow-300">•</span> ULTIMAS 03 VAGAS!
+        ⚠️ ÚLTIMA VEZ QUE VOCÊ VAI RECEBER ESTA OPORTUNIDADE! <span className="mx-1 inline-block text-yellow-300">•</span> Cupom de desconto de 30% <span className="mx-1 inline-block text-yellow-300">•</span> JRTEC30
       </p>
     </div>
 
