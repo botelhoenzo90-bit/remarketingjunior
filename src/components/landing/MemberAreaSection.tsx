@@ -50,9 +50,9 @@ const MemberAreaSection = () => {
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-10" />
       <div className="relative mx-auto max-w-7xl px-4">
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-black uppercase tracking-wider text-accent-foreground"><GraduationCap className="h-4 w-4" /> Área de membros • prévia do curso</span>
-          <h2 className="mt-5 font-display text-3xl font-black leading-tight sm:text-5xl">Veja como é estudar no <span className="text-gradient">Mestre da Manutenção.</span></h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Entre na prévia da área de membros e explore o treinamento por dentro. Cada assunto tem sua própria fileira de aulas, com navegação horizontal pelas setas, sem criar duas linhas de módulos no celular ou no computador.</p>
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-black uppercase tracking-wider text-accent-foreground"><GraduationCap className="h-4 w-4" /> Acesso liberado à prévia</span>
+          <h2 className="mt-5 font-display text-3xl font-black leading-tight sm:text-5xl">Espia aí: veja o curso <span className="text-gradient">por dentro</span> antes de comprar.</h2>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Aulas gratuitas liberadas agora e todos os módulos do treinamento à mostra. Deslize pelas setas e veja exatamente o que você vai dominar.</p>
         </motion.div>
 
         <div className="mx-auto mt-10 overflow-hidden rounded-[30px] border border-white/10 bg-[#060d17] shadow-[0_30px_100px_rgba(0,0,0,0.42)]">
