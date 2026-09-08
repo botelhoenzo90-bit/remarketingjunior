@@ -1,56 +1,30 @@
 import { motion } from "framer-motion";
-import { Smartphone, ArrowDown, PlayCircle } from "lucide-react";
+import { Check, Clock3, ShieldCheck, TicketPercent } from "lucide-react";
 import CtaButton from "./CtaButton";
-import vslCover from "@/assets/vsl-cover.png";
-
-const trustItems = ["7 DIAS DE GARANTIA", "ACESSO IMEDIATO", "AULAS ONLINE", "5 BÔNUS INCLUSOS"];
 
 const HeroSection = () => (
-  <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 bg-background">
-      <div className="absolute inset-0 opacity-[0.055]" style={{ backgroundImage: "linear-gradient(hsl(var(--primary)/0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)/0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background/70 to-background" />
-    </div>
-    <div className="pointer-events-none absolute left-1/2 top-[52%] h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-[130px]" style={{ background: "radial-gradient(circle, hsl(192 95% 55% / 0.7), transparent 70%)" }} />
-    <div className="absolute left-0 right-0 top-0 h-1 bg-primary" />
-
-    <div className="fixed left-0 right-0 top-0 z-50 w-full bg-red-600 px-3 py-2.5 text-center shadow-[0_8px_30px_rgba(220,38,38,0.35)] sm:py-3">
-      <p className="mx-auto max-w-6xl text-[10px] font-black uppercase leading-tight tracking-[0.06em] text-white sm:text-xs">
-        ⚠️ ÚLTIMA VEZ QUE VOCÊ VAI RECEBER ESTA OPORTUNIDADE! <span className="mx-1 inline-block text-yellow-300">•</span> Cupom de desconto de 30% <span className="mx-1 inline-block text-yellow-300">•</span> JRTEC30
-      </p>
+  <section id="inicio" className="relative overflow-hidden bg-[#050b12] py-20 text-white sm:py-28">
+    <div className="pointer-events-none absolute inset-0 bg-grid opacity-10" />
+    <div className="pointer-events-none absolute left-1/2 top-1/3 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
+    <div className="fixed left-0 right-0 top-0 z-50 bg-red-600 px-3 py-3 text-center shadow-[0_8px_30px_rgba(220,38,38,0.3)]">
+      <p className="mx-auto max-w-6xl text-[10px] font-black uppercase leading-tight tracking-[0.06em] text-white sm:text-xs">ANÚNCIO PREMIADO <span className="mx-1 text-yellow-300">•</span> Se você caiu nessa página, vai ter a oportunidade de comprar meu treinamento com 30% de desconto.</p>
     </div>
 
-    <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12 pt-16 text-center sm:pt-20">
-      <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} className="mb-6 flex items-center justify-center gap-2">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/40 bg-primary/10"><Smartphone className="h-5 w-5 text-primary" /></div>
-        <div className="text-left"><p className="font-display text-sm font-black uppercase leading-tight tracking-wider">MESTRE DA</p><p className="font-display text-sm font-black uppercase leading-tight tracking-wider text-accent">MANUTENÇÃO</p></div>
+    <div className="relative mx-auto max-w-6xl px-4 pt-8 text-center sm:pt-6">
+      <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Mestre da Manutenção · Curso 2026</motion.p>
+      <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mx-auto mt-5 max-w-5xl font-display text-4xl font-black leading-[1.03] sm:text-5xl lg:text-6xl">Curso de manutenção em celulares do básico, até o avançado em reparos em placa em <span className="text-cyan-300">iPhone e Android.</span></motion.h1>
+      <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">Pare de ficar perdido, sem saber por onde começar. Nesse treinamento você vai aprender como fazer análise, como encontrar o defeito e como fazer reparos em placa avançados.</motion.p>
+
+      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.28 }} className="mx-auto mt-9 max-w-xl rounded-3xl border border-cyan-400/30 bg-white/[0.04] p-6 shadow-[0_0_60px_rgba(34,211,238,0.08)] sm:p-8">
+        <div className="inline-flex items-center gap-2 rounded-full bg-red-500/15 px-4 py-2 text-xs font-black uppercase tracking-wider text-red-300"><Clock3 className="h-4 w-4" /> 30% de desconto válido somente hoje às 23:59</div>
+        <p className="mt-6 text-sm font-bold text-slate-400 line-through">De R$ 147,00</p>
+        <p className="mt-1 text-sm font-semibold text-slate-300">por apenas</p>
+        <p className="mt-1 font-display text-6xl font-black leading-none text-cyan-300 sm:text-7xl">R$ 102,90</p>
+        <div className="mt-4 flex items-center justify-center gap-2 text-sm font-black text-yellow-300"><TicketPercent className="h-5 w-5" /> CUPOM: JRTEC30</div>
+        <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-6 w-full py-5 text-base sm:text-lg">QUERO MEU ACESSO COM 30% OFF →</CtaButton>
+        <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-5 text-[10px] font-bold text-slate-400"><span className="flex flex-col items-center gap-1"><Check className="h-4 w-4 text-cyan-300" />Acesso imediato</span><span className="flex flex-col items-center gap-1"><ShieldCheck className="h-4 w-4 text-cyan-300" />7 dias de garantia</span><span className="flex flex-col items-center gap-1"><TicketPercent className="h-4 w-4 text-cyan-300" />Cupom 30%</span></div>
       </motion.div>
-
-      <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="mx-auto mb-5 max-w-5xl font-display text-4xl font-black leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-        Quanto mais você adia, <span className="text-gradient">mais longe fica o conhecimento que poderia estar construindo hoje.</span>
-      </motion.h1>
-
-      <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }} className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-        Se você ainda está em dúvida, não precisa decidir agora. Primeiro veja as aulas, conheça a plataforma e entenda exatamente o que o treinamento entrega. <strong className="text-foreground">Depois você decide.</strong>
-      </motion.p>
-
-      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.38 }} className="mx-auto mb-7 max-w-4xl">
-        <div className="mb-3 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-primary sm:text-sm"><PlayCircle className="h-4 w-4" /> VEJA A APRESENTAÇÃO</div>
-        <div className="relative aspect-video overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-[0_0_50px_hsl(192_95%_55%/0.2)] sm:rounded-3xl">
-          <img src={vslCover} alt="Apresentação do Mestre da Manutenção" className="absolute inset-0 h-full w-full object-cover" />
-          <iframe src="https://www.youtube.com/embed/3ONlCDPSsEY?rel=0" title="Apresentação do Mestre da Manutenção" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute inset-0 h-full w-full" />
-        </div>
-      </motion.div>
-
-      <CtaButton href="#aulas-gratis" className="w-full max-w-md px-6 py-5 text-base sm:text-lg">VER AULAS GRÁTIS AGORA →</CtaButton>
-      <p className="mt-3 text-xs text-muted-foreground">Veja o conteúdo primeiro. A oferta completa aparece mais abaixo.</p>
     </div>
-
-    <div className="relative z-10 w-full overflow-hidden border-y border-primary/20 bg-primary/95 py-2.5">
-      <div className="marquee-track flex whitespace-nowrap gap-8">{[...trustItems, ...trustItems, ...trustItems].map((item, i) => <span key={i} className="px-4 text-xs font-black tracking-wide text-primary-foreground sm:text-sm">✓ {item}</span>)}</div>
-    </div>
-
-    <a href="#aulas-gratis" className="relative z-10 mt-4 inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary sm:text-sm">Continue e veja como funciona <ArrowDown className="h-4 w-4" /></a>
   </section>
 );
 
