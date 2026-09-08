@@ -11,8 +11,18 @@ import d6 from "@/assets/depoimento-novo-6.jpg.asset.json";
 import d7 from "@/assets/depoimento-novo-7.jpg.asset.json";
 import d8 from "@/assets/depoimento-novo-8.jpg.asset.json";
 import d9 from "@/assets/depoimento-novo-9.jpg.asset.json";
+import d10 from "@/assets/depoimento-novo-10.jpg.asset.json";
+import d11 from "@/assets/depoimento-novo-11.jpg.asset.json";
+import d12 from "@/assets/depoimento-novo-12.jpg.asset.json";
+import d13 from "@/assets/depoimento-novo-13.jpg.asset.json";
+import d14 from "@/assets/depoimento-novo-14.jpg.asset.json";
+import d15 from "@/assets/depoimento-novo-15.jpg.asset.json";
+import d16 from "@/assets/depoimento-novo-16.jpg.asset.json";
+import d17 from "@/assets/depoimento-novo-17.jpg.asset.json";
+import d18 from "@/assets/depoimento-novo-18.jpg.asset.json";
+import d19 from "@/assets/depoimento-novo-19.jpg.asset.json";
 
-const screenshots = [d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url];
+const screenshots = [d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url, d10.url, d11.url, d12.url, d13.url, d14.url, d15.url, d16.url, d17.url, d18.url, d19.url];
 const loopedScreenshots = [...screenshots, ...screenshots];
 
 const TestimonialsSection = () => (
