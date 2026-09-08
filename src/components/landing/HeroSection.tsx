@@ -16,8 +16,7 @@ const HeroSection = () => (
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">Pare de ficar perdido, sem saber por onde começar. Nesse treinamento você vai aprender como fazer análise, como encontrar o defeito e como fazer reparos em placa avançados.</motion.p>
 
       <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.28 }} className="mx-auto mt-9 max-w-xl rounded-3xl border border-cyan-400/30 bg-white/[0.04] p-6 shadow-[0_0_60px_rgba(34,211,238,0.08)] sm:p-8">
-        <div className="inline-flex items-center gap-2 rounded-full bg-red-500/15 px-4 py-2 text-xs font-black uppercase tracking-wider text-red-300"><Clock3 className="h-4 w-4" /> 30% de desconto válido somente hoje às 23:59</div>
-        <p className="mt-6 text-sm font-bold text-slate-400 line-through">De R$ 147,00</p>
+        <p className="mt-1 text-sm font-bold text-slate-400 line-through">De R$ 147,00</p>
         <p className="mt-1 text-sm font-semibold text-slate-300">por apenas</p>
         <p className="mt-1 font-display text-6xl font-black leading-none text-cyan-300 sm:text-7xl">R$ 102,90</p>
         <div className="mt-4 flex items-center justify-center gap-2 text-sm font-black text-yellow-300"><TicketPercent className="h-5 w-5" /> CUPOM: JRTEC30</div>
