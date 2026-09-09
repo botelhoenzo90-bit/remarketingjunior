@@ -13,7 +13,13 @@ const readLeads = (): Lead[] => {
   }
 };
 
+const ADMIN_PASSWORD = "jrtec2026";
+const AUTH_KEY = "jrtec_admin_auth";
+
 const Admin = () => {
+  const [authed, setAuthed] = useState(() => sessionStorage.getItem(AUTH_KEY) === "ok");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [leads, setLeads] = useState<Lead[]>(readLeads);
   const [query, setQuery] = useState("");
 
