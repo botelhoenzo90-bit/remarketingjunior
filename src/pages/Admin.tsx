@@ -1,17 +1,8 @@
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { Search, Users, Mail, Phone, CalendarDays, Download, Trash2, RefreshCw } from "lucide-react";
 
-const LEADS_KEY = "jrtec_leads";
-
 type Lead = { id: string; name: string; email: string; phone: string; createdAt: string };
-
-const readLeads = (): Lead[] => {
-  try {
-    return JSON.parse(localStorage.getItem(LEADS_KEY) || "[]");
-  } catch {
-    return [];
-  }
-};
 
 const ADMIN_PASSWORD = "jrtec2026";
 const AUTH_KEY = "jrtec_admin_auth";
@@ -20,8 +11,31 @@ const Admin = () => {
   const [authed, setAuthed] = useState(() => sessionStorage.getItem(AUTH_KEY) === "ok");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [leads, setLeads] = useState<Lead[]>(readLeads);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
+
+  const loadLeads = useCallback(async () => {
+    setLoading(true);
+    const { data, error: fnError } = await supabase.functions.invoke("admin-leads", {
+      body: { password: sessionStorage.getItem(AUTH_KEY) === "ok" ? ADMIN_PASSWORD : "" },
+    });
+    setLoading(false);
+    if (fnError || !data?.leads) return;
+    setLeads(
+      (data.leads as Array<{ id: string; name: string; email: string; phone: string; created_at: string }>).map((row) => ({
+        id: row.id,
+        name: row.name,
+        email: row.email,
+        phone: row.phone,
+        createdAt: row.created_at,
+      })),
+    );
+  }, []);
+
+  useEffect(() => {
+    if (authed) void loadLeads();
+  }, [authed, loadLeads]);
 
   const filtered = useMemo(() => {
     const term = query.trim().toLowerCase();
@@ -29,13 +43,7 @@ const Admin = () => {
     return leads.filter((lead) => `${lead.name} ${lead.email} ${lead.phone}`.toLowerCase().includes(term));
   }, [leads, query]);
 
-  const refresh = () => setLeads(readLeads());
-
-  const clearLeads = () => {
-    if (!window.confirm("Apagar todos os leads salvos neste navegador?")) return;
-    localStorage.removeItem(LEADS_KEY);
-    setLeads([]);
-  };
+  const refresh = () => void loadLeads();
 
   const exportCsv = () => {
     const header = "Nome,Email,Telefone,Data\n";
@@ -57,7 +65,6 @@ const Admin = () => {
             event.preventDefault();
             if (password === ADMIN_PASSWORD) {
               sessionStorage.setItem(AUTH_KEY, "ok");
-              setLeads(readLeads());
               setAuthed(true);
               setError("");
             } else {
@@ -89,7 +96,7 @@ const Admin = () => {
         <header className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl sm:p-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-400">JRTEC • Admin</p><h1 className="mt-2 text-3xl font-black sm:text-4xl">Leads da inscrição</h1><p className="mt-2 max-w-2xl text-sm text-slate-400">Painel para acompanhar os dados preenchidos antes do checkout.</p></div>
-            <div className="flex flex-wrap gap-2"><button type="button" onClick={refresh} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold hover:bg-white/10"><RefreshCw className="h-4 w-4" /> Atualizar</button><button type="button" onClick={exportCsv} className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950 hover:brightness-110"><Download className="h-4 w-4" /> Exportar CSV</button></div>
+            <div className="flex flex-wrap gap-2"><button type="button" onClick={refresh} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold hover:bg-white/10"><RefreshCw className="h-4 w-4" /> {loading ? "Carregando..." : "Atualizar"}</button><button type="button" onClick={exportCsv} className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950 hover:brightness-110"><Download className="h-4 w-4" /> Exportar CSV</button></div>
           </div>
         </header>
 
