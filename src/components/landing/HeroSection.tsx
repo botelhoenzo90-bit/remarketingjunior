@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, PlayCircle, ShieldCheck, TicketPercent } from "lucide-react";
+import { Check, PlayCircle, ShieldCheck } from "lucide-react";
 import CtaButton from "./CtaButton";
 import vslCover from "@/assets/vsl-cover.png";
 
@@ -27,15 +27,19 @@ const HeroSection = () => (
       </motion.div>
 
       <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.32 }} className="mx-auto mt-9 max-w-xl rounded-3xl border border-cyan-400/30 bg-white/[0.04] p-6 shadow-[0_0_60px_rgba(34,211,238,0.08)] sm:p-8">
-        <div className="inline-flex items-center gap-2 rounded-xl bg-red-700 px-4 py-3 text-xs font-black uppercase tracking-wider text-white shadow-[0_0_25px_rgba(185,28,28,0.35)]">
-          30% de desconto válido somente hoje às 23:59
+        <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-300">Escolha seu acesso</p>
+        <div className="mt-5 space-y-4 text-left">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <p className="text-sm font-semibold text-slate-300">Acesso vitalício</p>
+            <p className="mt-1 font-display text-4xl font-black leading-none text-white sm:text-5xl">R$ 247</p>
+          </div>
+          <div className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4">
+            <p className="text-sm font-semibold text-cyan-300">Acesso por 1 ano</p>
+            <p className="mt-1 font-display text-4xl font-black leading-none text-cyan-300 sm:text-5xl">R$ 102,90</p>
+          </div>
         </div>
-        <p className="mt-6 text-sm font-bold text-slate-400 line-through">De R$ 147,00</p>
-        <p className="mt-1 text-sm font-semibold text-slate-300">por apenas</p>
-        <p className="mt-1 font-display text-6xl font-black leading-none text-cyan-300 sm:text-7xl">R$ 102,90</p>
-        <div className="mt-4 flex items-center justify-center gap-2 text-sm font-black text-yellow-300"><TicketPercent className="h-5 w-5" /> CUPOM: JRTEC30</div>
-        <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-6 w-full py-5 text-base sm:text-lg">QUERO MEU ACESSO COM 30% OFF →</CtaButton>
-        <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-5 text-[10px] font-bold text-slate-400"><span className="flex flex-col items-center gap-1"><Check className="h-4 w-4 text-cyan-300" />Acesso imediato</span><span className="flex flex-col items-center gap-1"><ShieldCheck className="h-4 w-4 text-cyan-300" />7 dias de garantia</span><span className="flex flex-col items-center gap-1"><TicketPercent className="h-4 w-4 text-cyan-300" />Cupom 30%</span></div>
+        <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-6 w-full py-5 text-base sm:text-lg">QUERO GARANTIR MEU ACESSO →</CtaButton>
+        <div className="mt-5 grid grid-cols-2 gap-2 border-t border-white/10 pt-5 text-[10px] font-bold text-slate-400"><span className="flex flex-col items-center gap-1"><Check className="h-4 w-4 text-cyan-300" />Acesso imediato</span><span className="flex flex-col items-center gap-1"><ShieldCheck className="h-4 w-4 text-cyan-300" />7 dias de garantia</span></div>
       </motion.div>
     </div>
   </section>
