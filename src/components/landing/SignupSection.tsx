@@ -1,28 +1,25 @@
 import { motion } from "framer-motion";
 import { ArrowRight, UserRound, Mail, Phone } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
+import { supabase } from "@/integrations/supabase/client";
 
-const LEADS_KEY = "jrtec_leads";
 const CHECKOUT_URL = "https://pay.kiwify.com.br/eOrXUxm";
 
 const SignupSection = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
     const lead = {
-      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       name: String(data.get("name") || "").trim(),
       email: String(data.get("email") || "").trim(),
       phone: String(data.get("phone") || "").trim(),
-      createdAt: new Date().toISOString(),
     };
 
     try {
-      const current = JSON.parse(localStorage.getItem(LEADS_KEY) || "[]");
-      localStorage.setItem(LEADS_KEY, JSON.stringify([lead, ...(Array.isArray(current) ? current : [])]));
+      await supabase.from("leads").insert(lead);
     } catch {
-      localStorage.setItem(LEADS_KEY, JSON.stringify([lead]));
+      // segue para o checkout mesmo se o registro falhar
     }
 
     form.reset();

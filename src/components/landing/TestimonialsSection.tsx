@@ -39,7 +39,7 @@ const TestimonialsSection = () => (
       <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary"><MessageSquareQuote className="h-4 w-4" /> Provas sociais</span>
       <h2 className="mt-5 font-display text-4xl font-black leading-tight sm:text-5xl">Veja o que alunos <span className="text-gradient">compartilharam.</span></h2>
       <div className="mt-4 flex items-center justify-center gap-1 text-yellow-400">{Array.from({length:5}).map((_,i)=><Star key={i} className="h-5 w-5 fill-current" />)}</div>
-      <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Depoimentos e experiências apresentados em uma fileira contínua.</p>
+      <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">Mensagens reais de alunos que saíram do zero, dominaram a bancada e hoje faturam com reparos que poucos técnicos sabem fazer.</p>
       <div className="relative mx-auto mt-10 max-w-[1500px] overflow-hidden py-3">
         <motion.div className="flex w-max gap-4 sm:gap-5" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 55, ease: "linear", repeat: Infinity }}>
           {loopedScreenshots.map((src,index)=><article key={`${index}-${src}`} className="flex h-[330px] w-[250px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border/50 bg-card p-2 shadow-xl sm:h-[420px] sm:w-[310px] sm:p-3"><img src={src} alt={`Depoimento de aluno ${((index % screenshots.length)+1)}`} className="h-full w-full object-contain" loading={index<3?"eager":"lazy"}/></article>)}

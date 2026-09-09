@@ -1,17 +1,8 @@
-import { useMemo, useState } from "react";
-import { Search, Users, Mail, Phone, CalendarDays, Download, Trash2, RefreshCw } from "lucide-react";
-
-const LEADS_KEY = "jrtec_leads";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { Search, Users, Mail, Phone, CalendarDays, Download, RefreshCw } from "lucide-react";
 
 type Lead = { id: string; name: string; email: string; phone: string; createdAt: string };
-
-const readLeads = (): Lead[] => {
-  try {
-    return JSON.parse(localStorage.getItem(LEADS_KEY) || "[]");
-  } catch {
-    return [];
-  }
-};
 
 const ADMIN_PASSWORD = "jrtec2026";
 const AUTH_KEY = "jrtec_admin_auth";
@@ -20,8 +11,31 @@ const Admin = () => {
   const [authed, setAuthed] = useState(() => sessionStorage.getItem(AUTH_KEY) === "ok");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [leads, setLeads] = useState<Lead[]>(readLeads);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
+
+  const loadLeads = useCallback(async () => {
+    setLoading(true);
+    const { data, error: fnError } = await supabase.functions.invoke("admin-leads", {
+      body: { password: sessionStorage.getItem(AUTH_KEY) === "ok" ? ADMIN_PASSWORD : "" },
+    });
+    setLoading(false);
+    if (fnError || !data?.leads) return;
+    setLeads(
+      (data.leads as Array<{ id: string; name: string; email: string; phone: string; created_at: string }>).map((row) => ({
+        id: row.id,
+        name: row.name,
+        email: row.email,
+        phone: row.phone,
+        createdAt: row.created_at,
+      })),
+    );
+  }, []);
+
+  useEffect(() => {
+    if (authed) void loadLeads();
+  }, [authed, loadLeads]);
 
   const filtered = useMemo(() => {
     const term = query.trim().toLowerCase();
@@ -29,13 +43,7 @@ const Admin = () => {
     return leads.filter((lead) => `${lead.name} ${lead.email} ${lead.phone}`.toLowerCase().includes(term));
   }, [leads, query]);
 
-  const refresh = () => setLeads(readLeads());
-
-  const clearLeads = () => {
-    if (!window.confirm("Apagar todos os leads salvos neste navegador?")) return;
-    localStorage.removeItem(LEADS_KEY);
-    setLeads([]);
-  };
+  const refresh = () => void loadLeads();
 
   const exportCsv = () => {
     const header = "Nome,Email,Telefone,Data\n";
@@ -57,7 +65,6 @@ const Admin = () => {
             event.preventDefault();
             if (password === ADMIN_PASSWORD) {
               sessionStorage.setItem(AUTH_KEY, "ok");
-              setLeads(readLeads());
               setAuthed(true);
               setError("");
             } else {
@@ -89,7 +96,7 @@ const Admin = () => {
         <header className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl sm:p-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-400">JRTEC • Admin</p><h1 className="mt-2 text-3xl font-black sm:text-4xl">Leads da inscrição</h1><p className="mt-2 max-w-2xl text-sm text-slate-400">Painel para acompanhar os dados preenchidos antes do checkout.</p></div>
-            <div className="flex flex-wrap gap-2"><button type="button" onClick={refresh} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold hover:bg-white/10"><RefreshCw className="h-4 w-4" /> Atualizar</button><button type="button" onClick={exportCsv} className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950 hover:brightness-110"><Download className="h-4 w-4" /> Exportar CSV</button></div>
+            <div className="flex flex-wrap gap-2"><button type="button" onClick={refresh} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold hover:bg-white/10"><RefreshCw className="h-4 w-4" /> {loading ? "Carregando..." : "Atualizar"}</button><button type="button" onClick={exportCsv} className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950 hover:brightness-110"><Download className="h-4 w-4" /> Exportar CSV</button></div>
           </div>
         </header>
 
@@ -100,7 +107,7 @@ const Admin = () => {
         </section>
 
         <section className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04]">
-          <div className="flex flex-col gap-3 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between"><div className="relative w-full max-w-md"><Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar nome, e-mail ou telefone" className="h-11 w-full rounded-xl border border-white/10 bg-black/20 pl-10 pr-4 text-sm outline-none focus:border-cyan-400" /></div><button type="button" onClick={clearLeads} className="inline-flex items-center justify-center gap-2 rounded-xl border border-red-500/20 px-4 py-3 text-sm font-bold text-red-300 hover:bg-red-500/10"><Trash2 className="h-4 w-4" /> Limpar dados</button></div>
+          <div className="flex flex-col gap-3 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between"><div className="relative w-full max-w-md"><Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar nome, e-mail ou telefone" className="h-11 w-full rounded-xl border border-white/10 bg-black/20 pl-10 pr-4 text-sm outline-none focus:border-cyan-400" /></div></div>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] text-left text-sm"><thead className="bg-black/20 text-xs uppercase tracking-wider text-slate-500"><tr><th className="px-5 py-4">Nome</th><th className="px-5 py-4">E-mail</th><th className="px-5 py-4">Telefone</th><th className="px-5 py-4">Data</th></tr></thead><tbody className="divide-y divide-white/5">{filtered.map((lead) => <tr key={lead.id} className="hover:bg-white/[0.03]"><td className="px-5 py-4 font-bold">{lead.name}</td><td className="px-5 py-4 text-slate-300">{lead.email}</td><td className="px-5 py-4 text-slate-300"><span className="inline-flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-cyan-400" />{lead.phone}</span></td><td className="px-5 py-4 text-slate-400">{new Date(lead.createdAt).toLocaleString("pt-BR")}</td></tr>)}{filtered.length === 0 && <tr><td colSpan={4} className="px-5 py-14 text-center text-slate-500">Nenhum lead encontrado.</td></tr>}</tbody></table>
           </div>
