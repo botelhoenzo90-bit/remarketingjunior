@@ -12,9 +12,12 @@ const GuaranteeSection = () => (
       <p className="mt-6 text-xs font-black uppercase tracking-[0.2em] text-accent">Compra protegida</p>
       <h2 className="mt-3 font-display text-4xl font-black leading-tight text-white sm:text-5xl">Experimente por 7 dias - você não tem nada a perder</h2>
       <div className="mx-auto mt-5 max-w-3xl space-y-4 text-left text-base leading-relaxed text-slate-300 sm:text-lg">
-        <p>Não tem dúvida, a Escola do Perpétuo simplesmente funciona. A prova disso são os mais de 10 mil alunos com resultados incríveis e que tiveram suas vidas transformadas, criando um negócio digital. Mas se você ainda tem alguma dúvida, vou permitir que você experimente por 7 dias e caso você não goste ou não veja nenhum resultado, basta me enviar um email durante esse período que devolvo todo o valor que você pagou.</p>
-        <p>Ou seja, se der certo, você consegue ter um negócio lucrativo que vai faturar 100 mil reais todos os meses. E se não gostar, você tem o seu dinheiro de volta.</p>
-        <p>O único risco que você corre é de estar daqui a 60 dias faturando 100 mil reais.</p>
+        <p>Não tenha dúvida, meu treinamento mestre da manutenção simplesmente funciona.</p>
+        <p>A prova disso são os mais de 1.000 mil alunos com resultados incríveis e que tiveram suas vidas transformadas.</p>
+        <p>Abriram loja física, aprenderam a fazer reparos em placa avançado.</p>
+        <p>Mas se você ainda tem alguma dúvida, vou permitir que você experimente por 7 dias e caso você não goste ou não veja nenhum resultado, basta me enviar um email durante esse período que devolvo todo o valor que você pagou.</p>
+        <p>Ou seja, se der certo, você consegue ter um negócio lucrativo e vai aumentar seu lucro com reparos em placa e vai faturar 10 mil reais todos os meses. E se não gostar, você tem o seu dinheiro de volta.</p>
+        <p>O único risco que você corre é de estar daqui a 60 dias faturando 10 mil reais.</p>
         <p>Simples assim!</p>
       </div>
       <div className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-3">
