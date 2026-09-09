@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Search, Users, Mail, Phone, CalendarDays, Download, Trash2, RefreshCw } from "lucide-react";
+import { Search, Users, Mail, Phone, CalendarDays, Download, RefreshCw } from "lucide-react";
 
 type Lead = { id: string; name: string; email: string; phone: string; createdAt: string };
 
@@ -107,7 +107,7 @@ const Admin = () => {
         </section>
 
         <section className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04]">
-          <div className="flex flex-col gap-3 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between"><div className="relative w-full max-w-md"><Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar nome, e-mail ou telefone" className="h-11 w-full rounded-xl border border-white/10 bg-black/20 pl-10 pr-4 text-sm outline-none focus:border-cyan-400" /></div><button type="button" onClick={clearLeads} className="inline-flex items-center justify-center gap-2 rounded-xl border border-red-500/20 px-4 py-3 text-sm font-bold text-red-300 hover:bg-red-500/10"><Trash2 className="h-4 w-4" /> Limpar dados</button></div>
+          <div className="flex flex-col gap-3 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between"><div className="relative w-full max-w-md"><Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar nome, e-mail ou telefone" className="h-11 w-full rounded-xl border border-white/10 bg-black/20 pl-10 pr-4 text-sm outline-none focus:border-cyan-400" /></div></div>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] text-left text-sm"><thead className="bg-black/20 text-xs uppercase tracking-wider text-slate-500"><tr><th className="px-5 py-4">Nome</th><th className="px-5 py-4">E-mail</th><th className="px-5 py-4">Telefone</th><th className="px-5 py-4">Data</th></tr></thead><tbody className="divide-y divide-white/5">{filtered.map((lead) => <tr key={lead.id} className="hover:bg-white/[0.03]"><td className="px-5 py-4 font-bold">{lead.name}</td><td className="px-5 py-4 text-slate-300">{lead.email}</td><td className="px-5 py-4 text-slate-300"><span className="inline-flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-cyan-400" />{lead.phone}</span></td><td className="px-5 py-4 text-slate-400">{new Date(lead.createdAt).toLocaleString("pt-BR")}</td></tr>)}{filtered.length === 0 && <tr><td colSpan={4} className="px-5 py-14 text-center text-slate-500">Nenhum lead encontrado.</td></tr>}</tbody></table>
           </div>
