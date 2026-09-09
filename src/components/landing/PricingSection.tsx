@@ -1,19 +1,26 @@
 import { motion } from "framer-motion";
-import { Check, Smartphone, Wrench, Cpu, Search, Settings, Users, Award } from "lucide-react";
+import { Check, Smartphone, Wrench, Cpu, Search, Settings, Users, Award, CircuitBoard, Gift, RefreshCw, Zap, Package } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import CtaButton from "./CtaButton";
 
 const learn = [
-  [Search, "Análise e diagnóstico de defeitos"],
-  [Wrench, "Ferramentas, bancada e manutenção do básico"],
-  [Smartphone, "Trocas e reparos em iPhone e Android"],
-  [Settings, "Testes, software e identificação de falhas"],
-  [Cpu, "Eletrônica aplicada à manutenção"],
-  [Wrench, "Microssoldagem e reparos em placa"],
-  [Cpu, "Reparos avançados em placas de iPhone"],
-  [Smartphone, "Reparos avançados em placas Android"],
-  [Users, "Suporte e grupo de alunos"],
-  [Award, "Certificado de conclusão"],
+  [Smartphone, "Troca de Telas, Baterias, Câmeras e Conectores"],
+  [Wrench, "Tampa Traseira, Botões e Antenas"],
+  [Settings, "Desoxidação e Software"],
+  [Search, "Microfones, Alto-falantes e Sensores Biométricos"],
+  [CircuitBoard, "Placas, Circuitos e Diagnóstico Avançado"],
+  [Wrench, "Ferramentas Essenciais e Calibração"],
+  [Package, "Lista de Fornecedores Confiáveis"],
+  [Zap, "Multímetro, Fonte e Eletrônica"],
+  [Cpu, "Micro Soldagem, Reballing e Jumper"],
+  [Cpu, "CPU, Memória NAND e Swap"],
+  [Smartphone, "Reparos em Placa Android Completo"],
+  [Smartphone, "Reparos em Placa iPhone Completo"],
+  [CircuitBoard, "Face ID, Interpuser e Separação de Placas"],
+  [Gift, "5 Bônus Exclusivos (valor +R$ 1.685)"],
+  [Award, "Certificado Profissional de Conclusão"],
+  [Users, "Comunidade VIP + Suporte Direto"],
+  [RefreshCw, "Atualizações Vitalícias Gratuitas"],
 ] as const;
 
 const PricingSection = () => (
