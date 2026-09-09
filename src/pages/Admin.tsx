@@ -49,6 +49,40 @@ const Admin = () => {
     URL.revokeObjectURL(url);
   };
 
+  if (!authed) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#06101d] px-4 text-white">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            if (password === ADMIN_PASSWORD) {
+              sessionStorage.setItem(AUTH_KEY, "ok");
+              setLeads(readLeads());
+              setAuthed(true);
+              setError("");
+            } else {
+              setError("Senha incorreta.");
+            }
+          }}
+          className="w-full max-w-sm rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-2xl"
+        >
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-400">JRTEC • Admin</p>
+          <h1 className="mt-2 text-2xl font-black">Área restrita</h1>
+          <p className="mt-2 text-sm text-slate-400">Digite a senha para ver os cadastros.</p>
+          <input
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            placeholder="Senha"
+            className="mt-5 h-12 w-full rounded-xl border border-white/10 bg-black/20 px-4 text-sm outline-none focus:border-cyan-400"
+          />
+          {error && <p className="mt-2 text-sm font-bold text-red-400">{error}</p>}
+          <button type="submit" className="mt-4 w-full rounded-xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950 hover:brightness-110">ENTRAR</button>
+        </form>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-[#06101d] text-white">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
