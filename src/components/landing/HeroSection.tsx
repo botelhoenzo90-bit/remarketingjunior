@@ -22,7 +22,7 @@ const HeroSection = () => (
         <div className="mb-3 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-primary sm:text-sm"><PlayCircle className="h-4 w-4" /> Veja a apresentação</div>
         <div className="relative aspect-video overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-[0_0_50px_hsl(192_95%_55%/0.2)] sm:rounded-3xl">
           <img src={vslCover} alt="Apresentação do Mestre da Manutenção" className="absolute inset-0 h-full w-full object-cover" />
-          <iframe src="https://www.youtube.com/embed/3ONlCDPSsEY?rel=0" title="Apresentação do Mestre da Manutenção" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute inset-0 h-full w-full" />
+          <iframe src="https://www.youtube.com/embed/lFQ9qmtnVnA?rel=0" title="Apresentação do Mestre da Manutenção" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute inset-0 h-full w-full" />
         </div>
       </motion.div>
 

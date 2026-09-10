@@ -3,15 +3,20 @@ import CtaButton from "./CtaButton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Preciso já trabalhar com manutenção?", a: "Não. O treinamento foi pensado para acompanhar quem está começando e também quem já trabalha com manutenção e quer avançar para diagnóstico, eletrônica e reparos em placa." },
-  { q: "Nunca fiz microssoldagem. Isso é para mim?", a: "O conteúdo apresenta técnicas e procedimentos de microssoldagem dentro da proposta do treinamento. Você pode estudar as aulas, pausar, revisar e avançar no seu ritmo." },
-  { q: "Vou aprender a diagnosticar defeitos em placa?", a: "Sim. O conteúdo inclui diagnóstico, eletrônica, uso de multímetro e fonte de alimentação, além de diferentes situações de reparo em placa." },
-  { q: "O treinamento aborda Android e iPhone?", a: "Sim. Há conteúdos voltados para reparos em placas Android e iPhone, além de outros procedimentos de manutenção apresentados na página." },
-  { q: "Quais tipos de reparo aparecem no curso?", a: "Entre os conteúdos apresentados estão telas, baterias, conectores, câmeras, desoxidação, áudio, diagnóstico, microssoldagem, jumper, reballing e reparos em placa." },
-  { q: "Preciso comprar todas as ferramentas antes de começar?", a: "Não é necessário começar dominando tudo. O ideal é estudar o conteúdo e entender quais ferramentas e insumos fazem sentido para o seu momento e para os serviços que você pretende executar." },
-  { q: "Como funciona o acesso?", a: "O curso é online e o acesso é liberado após a confirmação da compra. Assim, você pode acompanhar as aulas de acordo com a sua rotina." },
-  { q: "Existe suporte para dúvidas?", a: "Sim. A oferta inclui comunidade VIP e suporte direto para dúvidas relacionadas à jornada de aprendizado." },
-  { q: "E se eu perceber que o curso não é para mim?", a: "A oferta inclui 7 dias de garantia. Se decidir não continuar, você pode solicitar o reembolso dentro do prazo e conforme as condições da garantia." },
+  { q: "O curso tem certificado?", a: "Sim. Ao concluir o treinamento você recebe o Certificado Profissional de Conclusão, que comprova sua qualificação na área de manutenção de celulares." },
+  { q: "Tem grupo de alunos?", a: "Sim. Você entra para a Comunidade VIP de alunos, onde pode trocar experiências, tirar dúvidas e acompanhar o que outros técnicos estão fazendo." },
+  { q: "Tem suporte pra tirar dúvidas?", a: "Sim. A oferta inclui suporte direto para tirar dúvidas durante a sua jornada de aprendizado, além da comunidade VIP." },
+  { q: "O curso é em PDF? Ou vídeo aulas?", a: "São vídeo aulas gravadas em alta qualidade, com aulas práticas na bancada para você ver passo a passo cada procedimento." },
+  { q: "O curso é atualizado ou as aulas são antiga?", a: "O conteúdo é constantemente atualizado com novas técnicas, procedimentos e situações reais de assistência técnica." },
+  { q: "Tem atualizações?", a: "Sim. As atualizações são vitalícias e gratuitas para quem adquire o acesso vitalício, sem custo adicional." },
+  { q: "É acesso vitalício ou 1 ano?", a: "Você escolhe a melhor opção para você: acesso vitalício por R$ 247 ou acesso por 1 ano por R$ 102,90." },
+  { q: "Ensina reparos em iphone?", a: "Sim. O treinamento ensina reparos em placa de iPhone e Android, do básico até o avançado." },
+  { q: "Ensina achar o defeito?", a: "Sim. Você aprende diagnóstico completo, uso de multímetro, fonte de alimentação e análise para encontrar o defeito corretamente." },
+  { q: "Ensina esquema elétrico?", a: "Sim. O curso aborda leitura de esquemas elétricos e como interpretar os circuitos para resolver defeitos com mais precisão." },
+  { q: "É curso presencial ou online?", a: "É 100% online. Você assiste as aulas de onde quiser, no seu ritmo e pode rever quantas vezes precisar." },
+  { q: "Como faço pra aderir?", a: "Basta preencher seus dados no formulário da página, clicar em continuar e finalizar a compra no checkout seguro." },
+  { q: "Como vou ter acesso ao curso?", a: "Após a confirmação do pagamento você recebe o acesso à área de membros com login e senha para assistir todas as aulas." },
+  { q: "Quanto é o curso?", a: "O acesso vitalício custa R$ 247 e o acesso por 1 ano custa R$ 102,90. Ainda dá para usar o cupom JRTEC30 para garantir 30% de desconto." },
 ];
 
 const FAQSection = () => (
