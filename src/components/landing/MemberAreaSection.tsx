@@ -27,7 +27,12 @@ import capaEsquema from "@/assets/board/esquema.jpg";
 
 const rows = [
   { title: "Aulas liberadas agora", subtitle: "Assista de graça e veja a didática na prática", type: "free", items: [
-    { title: "Como trocar um C.I de Wi-Fi", videoId: "SZLLDmMOiRA" }, { title: "Como trocar um IF PMIC", videoId: "FP5xYT-PFt0" }, { title: "Como trocar um PMIC", videoId: "MyxWlTqSn6k" },
+    { title: "Aula prática 01", videoId: "6czCuYSpe9A" },
+    { title: "Aula prática 02", videoId: "iVqEmnvEQdU" },
+    { title: "Aula prática 03", videoId: "tybLC_20JU8" },
+    { title: "Aula prática 04", videoId: "OUq0zGplJjw" },
+    { title: "Aula prática 05", videoId: "mXBJWQPgKg0" },
+    { title: "Aula prática 06", videoId: "54Q-1wd18B0" },
   ]},
   { title: "Conheça o curso por dentro", subtitle: "Veja onde você vai estudar e como funciona o treinamento", type: "preview", items: [
     { title: "Entenda como o treinamento funciona", videoId: "rbkPaEU9rJs", label: "01 · METODOLOGIA" }, { title: "Veja onde você vai estudar", videoId: "G7SnLMD1-JM", label: "02 · PLATAFORMA" },
