@@ -18,7 +18,7 @@ const HeroSection = () => (
       <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mx-auto mt-1.5 max-w-4xl font-display text-base font-black leading-[1.12] sm:text-3xl lg:text-4xl">Curso de manutenção em celulares do básico, até o avançado em reparos em placa em <span className="text-cyan-300">iPhone e Android.</span></motion.h1>
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mx-auto mt-1.5 max-w-2xl text-[10px] leading-snug text-slate-300 sm:text-sm">Pare de ficar perdido, sem saber por onde começar. Nesse treinamento você vai aprender como fazer análise, como encontrar o defeito e como fazer reparos em placa avançados.</motion.p>
 
-      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.26 }} className="mx-auto mt-2.5 max-w-[280px] sm:max-w-lg">
+      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.26 }} className="mx-auto mt-2.5 max-w-[280px] sm:max-w-md">
         <div className="mb-1 flex items-center justify-center gap-1.5 text-[9px] font-black uppercase tracking-[0.16em] text-primary"><PlayCircle className="h-3 w-3" /> Veja a apresentação</div>
         <div className="relative aspect-video overflow-hidden rounded-lg border-2 border-primary/70 bg-card shadow-[0_0_50px_hsl(192_95%_55%/0.2)] sm:rounded-2xl">
           <img src={vslCover} alt="Apresentação do Mestre da Manutenção" className="absolute inset-0 h-full w-full object-cover" />
