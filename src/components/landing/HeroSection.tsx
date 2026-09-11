@@ -4,7 +4,7 @@ import CtaButton from "./CtaButton";
 import vslCover from "@/assets/vsl-cover.png";
 
 const HeroSection = () => (
-  <section id="inicio" className="relative overflow-hidden bg-[#050b12] py-20 text-white sm:py-28">
+  <section id="inicio" className="relative overflow-hidden bg-[#050b12] py-8 text-white sm:py-10">
     <div className="pointer-events-none absolute inset-0 bg-grid opacity-10" />
     <div className="pointer-events-none absolute left-1/2 top-1/3 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
     <div className="fixed left-0 right-0 top-0 z-50 bg-red-600 px-3 py-3 text-center shadow-[0_8px_30px_rgba(220,38,38,0.3)]">
@@ -13,36 +13,38 @@ const HeroSection = () => (
       </p>
     </div>
 
-    <div className="relative mx-auto max-w-6xl px-4 pt-8 text-center sm:pt-6">
-      <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Mestre da Manutenção · Curso 2026</motion.p>
-      <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mx-auto mt-5 max-w-5xl font-display text-4xl font-black leading-[1.03] sm:text-5xl lg:text-6xl">Curso de manutenção em celulares do básico, até o avançado em reparos em placa em <span className="text-cyan-300">iPhone e Android.</span></motion.h1>
-      <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">Pare de ficar perdido, sem saber por onde começar. Nesse treinamento você vai aprender como fazer análise, como encontrar o defeito e como fazer reparos em placa avançados.</motion.p>
+    <div className="relative mx-auto max-w-5xl px-4 pt-7 text-center sm:pt-6">
+      <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-300 sm:text-xs">Mestre da Manutenção · Curso 2026</motion.p>
+      <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mx-auto mt-2 max-w-4xl font-display text-xl font-black leading-[1.08] sm:text-3xl lg:text-4xl">Curso de manutenção em celulares do básico, até o avançado em reparos em placa em <span className="text-cyan-300">iPhone e Android.</span></motion.h1>
+      <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mx-auto mt-2 max-w-2xl text-[11px] leading-snug text-slate-300 sm:text-sm">Pare de ficar perdido, sem saber por onde começar. Nesse treinamento você vai aprender como fazer análise, como encontrar o defeito e como fazer reparos em placa avançados.</motion.p>
 
-      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.26 }} className="mx-auto mt-9 max-w-4xl">
-        <div className="mb-3 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-primary sm:text-sm"><PlayCircle className="h-4 w-4" /> Veja a apresentação</div>
-        <div className="relative aspect-video overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-[0_0_50px_hsl(192_95%_55%/0.2)] sm:rounded-3xl">
+      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.26 }} className="mx-auto mt-3 max-w-md sm:max-w-lg">
+        <div className="mb-1.5 flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary"><PlayCircle className="h-3.5 w-3.5" /> Veja a apresentação</div>
+        <div className="relative aspect-video overflow-hidden rounded-xl border-2 border-primary/70 bg-card shadow-[0_0_50px_hsl(192_95%_55%/0.2)] sm:rounded-2xl">
           <img src={vslCover} alt="Apresentação do Mestre da Manutenção" className="absolute inset-0 h-full w-full object-cover" />
           <iframe src="https://www.youtube.com/embed/lFQ9qmtnVnA?rel=0" title="Apresentação do Mestre da Manutenção" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute inset-0 h-full w-full" />
         </div>
       </motion.div>
 
-      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.32 }} className="mx-auto mt-9 max-w-xl rounded-3xl border border-cyan-400/30 bg-white/[0.04] p-6 shadow-[0_0_60px_rgba(34,211,238,0.08)] sm:p-8">
-        <div className="inline-flex items-center gap-2 rounded-xl bg-red-700 px-4 py-3 text-xs font-black uppercase tracking-wider text-white shadow-[0_0_25px_rgba(185,28,28,0.35)]">
+      <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.32 }} className="mx-auto mt-3 max-w-md rounded-2xl border border-cyan-400/30 bg-white/[0.04] p-4 shadow-[0_0_60px_rgba(34,211,238,0.08)]">
+        <div className="inline-flex items-center gap-2 rounded-lg bg-red-700 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-white shadow-[0_0_25px_rgba(185,28,28,0.35)]">
           30% de desconto válido somente hoje às 23:59
         </div>
-        <div className="mt-5 space-y-4 text-left">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-            <p className="text-sm font-semibold text-slate-300">Acesso vitalício</p>
-            <p className="mt-1 font-display text-4xl font-black leading-none text-white sm:text-5xl">R$ 247</p>
+        <div className="mt-3 grid grid-cols-2 gap-2 text-left">
+          <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+            <p className="text-[11px] font-semibold text-slate-300">Acesso vitalício</p>
+            <p className="mt-1 text-xs font-bold text-red-500 line-through">De R$ 297</p>
+            <p className="font-display text-2xl font-black leading-none text-white">por R$ 247</p>
           </div>
-          <div className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4">
-            <p className="text-sm font-semibold text-cyan-300">Acesso por 1 ano</p>
-            <p className="mt-1 font-display text-4xl font-black leading-none text-cyan-300 sm:text-5xl">R$ 102,90</p>
+          <div className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 p-3">
+            <p className="text-[11px] font-semibold text-cyan-300">Acesso por 1 ano</p>
+            <p className="mt-1 text-xs font-bold text-red-500 line-through">De R$ 147</p>
+            <p className="font-display text-2xl font-black leading-none text-cyan-300">por R$ 102,90</p>
           </div>
         </div>
-        <div className="mt-4 flex items-center justify-center gap-2 text-sm font-black text-yellow-300"><TicketPercent className="h-5 w-5" /> CUPOM: JRTEC30</div>
-        <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-6 w-full py-5 text-base sm:text-lg">QUERO MEU ACESSO COM 30% OFF →</CtaButton>
-        <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-5 text-[10px] font-bold text-slate-400"><span className="flex flex-col items-center gap-1"><Check className="h-4 w-4 text-cyan-300" />Acesso imediato</span><span className="flex flex-col items-center gap-1"><ShieldCheck className="h-4 w-4 text-cyan-300" />7 dias de garantia</span><span className="flex flex-col items-center gap-1"><TicketPercent className="h-4 w-4 text-cyan-300" />Cupom 30%</span></div>
+        <div className="mt-3 flex items-center justify-center gap-2 text-xs font-black text-yellow-300"><TicketPercent className="h-4 w-4" /> CUPOM: JRTEC30</div>
+        <CtaButton href="https://pay.kiwify.com.br/eOrXUxm" className="mt-3 w-full py-3 text-sm">QUERO MEU ACESSO COM 30% OFF →</CtaButton>
+        <div className="mt-3 grid grid-cols-3 gap-2 border-t border-white/10 pt-3 text-[9px] font-bold text-slate-400"><span className="flex flex-col items-center gap-1"><Check className="h-3.5 w-3.5 text-cyan-300" />Acesso imediato</span><span className="flex flex-col items-center gap-1"><ShieldCheck className="h-3.5 w-3.5 text-cyan-300" />7 dias de garantia</span><span className="flex flex-col items-center gap-1"><TicketPercent className="h-3.5 w-3.5 text-cyan-300" />Cupom 30%</span></div>
       </motion.div>
     </div>
   </section>
