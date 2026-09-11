@@ -26,28 +26,32 @@ import capaAndroidPlaca from "@/assets/board/android-placa.jpg";
 import capaEsquema from "@/assets/board/esquema.jpg";
 
 const rows = [
-  { title: "Aulas liberadas agora", subtitle: "Assista de graça e veja a didática na prática", type: "free", items: [
-    { title: "Aula prática 01", videoId: "6czCuYSpe9A" },
-    { title: "Aula prática 02", videoId: "iVqEmnvEQdU" },
-    { title: "Aula prática 03", videoId: "tybLC_20JU8" },
-    { title: "Aula prática 04", videoId: "OUq0zGplJjw" },
-    { title: "Aula prática 05", videoId: "mXBJWQPgKg0" },
-    { title: "Aula prática 06", videoId: "54Q-1wd18B0" },
-  ]},
   { title: "Conheça o curso por dentro", subtitle: "Veja onde você vai estudar e como funciona o treinamento", type: "preview", items: [
     { title: "Entenda como o treinamento funciona", videoId: "rbkPaEU9rJs", label: "01 · METODOLOGIA" }, { title: "Veja onde você vai estudar", videoId: "G7SnLMD1-JM", label: "02 · PLATAFORMA" },
   ]},
-  { title: "Reparo em placa", subtitle: "Diagnóstico, microssoldagem e reparos técnicos", type: "locked", items: [
-    { title: "Diagnóstico de defeitos em placa", number: "01", cover: capaEsquema }, { title: "Microssoldagem na prática", number: "02", cover: capaMicroSoldagem }, { title: "Condução reversa", number: "03", cover: capaConducao }, { title: "Reparo em placa passo a passo", number: "04", cover: capaPlacas }, { title: "Eletrônica aplicada", number: "05", cover: capaEletronica },
+  { title: "Reballing e reparo em placa", subtitle: "Primeira aula liberada · demais no curso completo", type: "mixed", items: [
+    { title: "Como fazer reballing no c.i de Wi-Fi", videoId: "6czCuYSpe9A" },
+    { title: "Diagnóstico de defeitos em placa", number: "02", cover: capaEsquema }, { title: "Microssoldagem na prática", number: "03", cover: capaMicroSoldagem }, { title: "Condução reversa", number: "04", cover: capaConducao }, { title: "Reparo em placa passo a passo", number: "05", cover: capaPlacas },
   ]},
-  { title: "Trocas e componentes", subtitle: "Os reparos mais comuns do dia a dia", type: "locked", items: [
-    { title: "Troca de telas", number: "01", cover: capaTelas }, { title: "Troca de baterias", number: "02", cover: capaBateria }, { title: "Conector de carga", number: "03", cover: capaConector }, { title: "Câmeras e componentes", number: "04", cover: capaCameras }, { title: "Botões e periféricos", number: "05", cover: capaVolume },
+  { title: "Memória, CPU e componentes críticos", subtitle: "Primeira aula liberada · demais no curso completo", type: "mixed", items: [
+    { title: "Como fazer reballing na memória", videoId: "iVqEmnvEQdU" },
+    { title: "Eletrônica aplicada", number: "02", cover: capaEletronica }, { title: "Reballing", number: "03", cover: capaReballing }, { title: "Análise com multímetro", number: "04", cover: capaMultimetro }, { title: "Fonte de alimentação", number: "05", cover: capaFonte },
   ]},
-  { title: "Do básico ao avançado", subtitle: "Construa sua base e avance para reparos mais técnicos", type: "locked", items: [
-    { title: "Ferramentas e bancada", number: "01", cover: capaFerramentas }, { title: "Fundamentos da manutenção", number: "02", cover: capaDiagnostico }, { title: "Jumper e reparos avançados", number: "03", cover: capaTrilhas }, { title: "Reballing", number: "04", cover: capaReballing }, { title: "Análise com multímetro", number: "05", cover: capaMultimetro },
+  { title: "Conectores e trocas do dia a dia", subtitle: "Primeira aula liberada · demais no curso completo", type: "mixed", items: [
+    { title: "Como trocar um conector fpc da bateria", videoId: "tybLC_20JU8" },
+    { title: "Troca de telas", number: "02", cover: capaTelas }, { title: "Troca de baterias", number: "03", cover: capaBateria }, { title: "Conector de carga", number: "04", cover: capaConector }, { title: "Câmeras e componentes", number: "05", cover: capaCameras },
   ]},
-  { title: "Eletrônica e diagnóstico", subtitle: "Conteúdos para aprofundar seu conhecimento", type: "locked", items: [
-    { title: "Fonte de alimentação", number: "01", cover: capaFonte }, { title: "Diagnóstico avançado", number: "02", cover: capaIphonePlaca }, { title: "Desoxidação", number: "03", cover: capaDesoxidacao }, { title: "Software e diagnóstico", number: "04", cover: capaSoftware }, { title: "Reparos em Android e iPhone", number: "05", cover: capaAndroidPlaca },
+  { title: "Reparos avançados em iPhone", subtitle: "Primeira aula liberada · demais no curso completo", type: "mixed", items: [
+    { title: "Como fazer reballing cpu de iphone", videoId: "OUq0zGplJjw" },
+    { title: "Diagnóstico avançado", number: "02", cover: capaIphonePlaca }, { title: "Jumper e reparos avançados", number: "03", cover: capaTrilhas }, { title: "Reparos em Android e iPhone", number: "04", cover: capaAndroidPlaca }, { title: "Botões e periféricos", number: "05", cover: capaVolume },
+  ]},
+  { title: "Limpeza, desoxidação e recuperação", subtitle: "Primeira aula liberada · demais no curso completo", type: "mixed", items: [
+    { title: "Como fazer limpeza cpu de iphone", videoId: "mXBJWQPgKg0" },
+    { title: "Desoxidação", number: "02", cover: capaDesoxidacao }, { title: "Software e diagnóstico", number: "03", cover: capaSoftware }, { title: "Fundamentos da manutenção", number: "04", cover: capaDiagnostico }, { title: "Ferramentas e bancada", number: "05", cover: capaFerramentas },
+  ]},
+  { title: "Micro soldagem de precisão", subtitle: "Primeira aula liberada · demais no curso completo", type: "mixed", items: [
+    { title: "Como fazer micro soldagem em componentes pequenos", videoId: "54Q-1wd18B0" },
+    { title: "Microssoldagem na prática", number: "02", cover: capaMicroSoldagem }, { title: "Condução reversa", number: "03", cover: capaConducao }, { title: "Eletrônica aplicada", number: "04", cover: capaEletronica }, { title: "Reparo em placa passo a passo", number: "05", cover: capaPlacas },
   ]},
 ];
 
@@ -97,7 +101,7 @@ const MemberAreaSection = () => {
 
                 <div ref={(element) => { rowRefs.current[row.title] = element; }} className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-1 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-4">
                   {row.items.map((item) => {
-                    if (row.type === "free" && "videoId" in item) return (
+                    if (row.type === "mixed" && "videoId" in item) return (
                       <button key={item.title} type="button" onClick={() => setSelectedVideo({ title: item.title, videoId: item.videoId })} className={`${cardBase} border-accent/25 bg-[#0b1725] hover:border-accent/60`}>
                         <div className="relative aspect-[2/3] overflow-hidden bg-slate-900">
                           <img src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`} alt={`Miniatura da aula ${item.title}`} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
